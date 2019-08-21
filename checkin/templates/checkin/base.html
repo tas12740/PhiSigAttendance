@@ -9,6 +9,7 @@
 
     {% load static %}
     <link rel="stylesheet" type="text/css" href="{% static 'checkin/css/base.css' %}">
+    <script src="{% static 'checkin/js/base.js' %}"></script>
 
     {% block head %}
 
@@ -32,6 +33,8 @@
 
         {% endblock %}
     </div>
+
+    <img src="{% static 'checkin/img/spinner.gif' %}" id="loader" alt="Loader..." style="display:none;">
 </body>
 
 </html>

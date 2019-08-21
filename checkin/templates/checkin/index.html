@@ -1,0 +1,21 @@
+{% extends 'checkin/base.html' %}
+
+{% load static %}
+{% block head %}
+<script src="{% static 'checkin/js/index.js' %}"></script>
+<link rel="stylesheet" type="text/css" src="{% static 'checkin/css/index.css' %}">
+{% endblock %}
+
+{% block content %}
+<form method="post" id="checkinform">
+    {% csrf_token %}
+    <div class="form-group">
+        <label for="eventcode">Enter the event code:</label>
+        <input type="text" class="form-control" id="eventcode" placeholder="Event Code" maxlength="4" autocorrect="off" autocapitalize="none">
+    </div>
+    <button type="submit" class="btn btn-primary">Go!</button>
+</form>
+<div class="my-2" id="alertdiv">
+
+</div>
+{% endblock %}

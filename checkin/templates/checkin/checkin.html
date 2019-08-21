@@ -1,0 +1,12 @@
+{% extends 'checkin/base.html' %}
+
+{% block content %}
+<h3 class="my-2">Check-In for {{ title }}</h3>
+<form>
+    <div class="form-group">
+        <label class="sr-only" for="onyen">Onyen</label>
+        <input type="text" class="form-control" placeholder="Onyen" id="onyen">
+    </div>
+    <button type="submit" class="btn btn-primary">Check In</button>
+</form>
+{% endblock %}

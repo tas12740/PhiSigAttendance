@@ -1,0 +1,12 @@
+.phisigpurple {
+    background-color: #4e2582;
+}
+
+.phisignavitem {
+    color: #ffee01;
+}
+
+.phisignavitem:hover {
+    background-color: #35195B;
+    color: #E5D600;
+}

@@ -26,7 +26,6 @@ $(document).ready(function() {
                 $('#checkinModalTitle').html('Error');
                 $('#checkinModalContent').html(message);
                 $('#checkinModal').modal();
-                console.log(err);
             }
         })
     })

@@ -1,6 +1,5 @@
 from django.db import models
 from django.core.validators import MinValueValidator, MaxValueValidator, MinLengthValidator
-# Create your models here.
 
 
 class Sibling(models.Model):
@@ -33,7 +32,7 @@ class Sibling(models.Model):
 
 
 class GPATracker(models.Model):
-    sibling = models.ForeignKey(
+    sibling = models.OneToOneField(
         'Sibling', unique=True, on_delete=models.CASCADE)
     gpa = models.FloatField(
         validators=[MinValueValidator(0), MaxValueValidator(4)])

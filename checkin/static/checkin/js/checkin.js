@@ -12,7 +12,7 @@ $(document).ready(function() {
             'onyen': $('#onyen').val()
         }
 
-        $.ajax('/checkin/api/checkin/', {
+        $.ajax('/api/checkin/', {
             type: 'POST',
             data: data,
             success: () => {

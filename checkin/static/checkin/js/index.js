@@ -16,7 +16,7 @@ $(document).ready(function() {
             'unique_id': eventCode
         }
 
-        $.ajax('/checkin/api/findEvent/', {
+        $.ajax('/api/findEvent/', {
             type: 'POST',
             data: data,
             success: (response) => {

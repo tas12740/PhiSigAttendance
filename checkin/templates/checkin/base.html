@@ -24,14 +24,23 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg phisigpurple">
-        <a class="navbar-brand phisignavitem px-2" href="#">ΦΣΠ - ΑΚ</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarExtra" aria-controls="navbarExtra" aria-expanded="false" aria-label="Toggle Navigation">
+    <nav class="navbar navbar-expand-lg navbar-custom">
+        <a class="navbar-brand px-2" href="#">ΦΣΠ - ΑΚ</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarExtra" aria-controls="navbarExtra" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
 
-        <div class="collapse navbar-collapse">
-
+        <div class="collapse navbar-collapse" id="navbarExtra">
+            <ul class="navbar-nav mr-auto flex-row">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="forSiblingsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        For Siblings
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="forSiblingsDropdown">
+                        <a class="dropdown-item" href="/checkin/">Check In</a>
+                    </div>
+                </li>
+            </ul>
         </div>
     </nav>
 

@@ -56,7 +56,7 @@ class Alumni(models.Model):
 
 class Event(models.Model):
     name = models.CharField(max_length=20, verbose_name='Name')
-    unique_id = models.CharField(max_length=4, validators=[
+    unique_id = models.CharField(max_length=4, unique=True, validators=[
                                  MinLengthValidator(4)], verbose_name='Event Code')
     description = models.CharField(
         max_length=100, blank=True, verbose_name='Description')

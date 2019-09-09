@@ -1,0 +1,66 @@
+{% extends 'checkin/base.html' %}
+
+{% block head %}
+{% load static %}
+<script src="{% static 'recruitment/js/checkin.js' %}"></script>
+
+<title>Phi Sigma Pi Recruitment Check-In</title>
+{% endblock %}
+
+{% block content %}
+<h3 class="my-2" id="header">Header Placeholder</h3>
+
+<div class="container" id="onyenFormDiv">
+    <form method="POST" id="onyenForm">
+        {% csrf_token %}
+        <input type="hidden" required class="form-control" id="eventType">
+        <input type="hidden" required class="form-control" id="eventName">
+        <div class="form-group">
+            <label class="sr-only" for="onyen">Onyen</label>
+            <input type="text" required class="form-control" placeholder="Onyen" id="onyen" autocorrect="off" autocapitalize="none">
+        </div>
+        <button type="submit" class="btn btn-primary">Check In</button>
+    </form>
+</div>
+
+<div class="container" id="additionalInformationDiv">
+    <form method="POST" id="additionalInformationForm">
+        <div class="form-group">
+            <label class="sr-only" for="onyenAdd">Onyen</label>
+            <input type="text" required class="form-control" placeholder="Onyen" id="onyenAdd" autocorrect="off" autocapitalize="none">
+        </div>
+        <div class="form-group">
+            <label class="sr-only" for="firstName">First Name</label>
+            <input type="text" required class="form-control" placeholder="First Name" id="firstName">
+        </div>
+        <div class="form-group">
+            <label class="sr-only" for="lastName">Last Name</label>
+            <input type="text" required class="form-control" placeholder="Last Name" id="lastName">
+        </div>
+        <div class="form-group">
+            <label class="sr-only" for="email">Email</label>
+            <input type="text" required class="form-control" placeholder="Email" id="email">
+        </div>
+        <button type="submit" class="btn btn-primary">Check In</button>
+    </form>
+</div>
+
+<div class="modal" tabindex="-1" role="dialog" id="checkinModal">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="checkinModalTitle">Title</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p id="checkinModalContent">Body</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

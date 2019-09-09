@@ -3,8 +3,6 @@ from django.http import HttpResponseNotFound, HttpResponseNotAllowed, JsonRespon
 
 from .models import Event, Sibling, CheckIn
 
-# Create your views here.
-
 
 def index(request):
     return render(request, 'checkin/index.html')

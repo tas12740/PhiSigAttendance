@@ -1,12 +1,30 @@
 from django.shortcuts import render, reverse
 from django.http import HttpResponseNotAllowed, HttpResponseNotFound, JsonResponse, HttpResponseBadRequest, HttpResponse
 
-from checkin.models import Event, Sibling, CheckIn
+from checkin.models import Event, Sibling, CheckIn, EventType
+from recruitment.models import PNM
+
+import datetime
 
 
 def find_event(request):
-    if request.method != 'POST':
-        return HttpResponseNotAllowed(permitted_methods=['POST'])
+    if request.method != 'POST' and request.method != 'GET':
+        return HttpResponseNotAllowed(permitted_methods=['POST', 'GET'])
+
+    if request.method == 'GET':
+        recruitment = request.GET.get('recruitment')
+        if recruitment:
+            events_today = Event.objects.filter(
+                date_time__date=datetime.date.today())
+            if len(events_today) == 0:
+                return HttpResponseBadRequest('No events were found for today!')
+            for eve in events_today:
+                if 'Recruitment' in eve.event_type.name or 'Potluck' in eve.event_type.name:
+                    return JsonResponse({
+                        'eventName': eve.name,
+                        'eventType': eve.event_type.name
+                    })
+            return HttpResponseBadRequest('No recruitment events were found for today!')
 
     unique_id = request.POST['unique_id']
     try:
@@ -52,3 +70,131 @@ def add_checkin(request):
     new_checkin.save()
 
     return HttpResponse(status=201)
+
+
+def checkin_type(event_name, event_type):
+    if 'Potluck' in event_type:
+        return {
+            'potluck': 1
+        }
+    if 'Friday' in event_type:
+        return {
+            'open_friday': 1
+        }
+    if 'First' in event_type:
+        event_type_obj = EventType.objects.get(name=event_type)
+        events = Event.objects.filter(
+            event_type=event_type_obj).order_by('date_time')
+        for ind, eve in enumerate(events):
+            if event_name == eve.name:
+                if ind == 0:
+                    return {
+                        'open_one': 1
+                    }
+                elif ind == 1:
+                    return {
+                        'open_two': 1
+                    }
+                elif ind == 2:
+                    return {
+                        'open_three': 1
+                    }
+        return False
+    if 'Second' in event_type:
+        events = Event.objects.filter(
+            event_type=event_type).order_by('date_time')
+        for ind, eve in enumerate(events):
+            if event_name == eve.name:
+                if ind == 0:
+                    return {
+                        'closed_one': 1
+                    }
+                elif ind == 1:
+                    return {
+                        'closed_two': 1
+                    }
+                elif ind == 2:
+                    return {
+                        'closed_three': 1
+                    }
+        return False
+    return False
+
+
+def recruitment_onyen(request):
+    if request.method != 'POST':
+        return HttpResponseNotAllowed(permitted_methods=['POST'])
+
+    data = request.POST
+
+    onyen = data.get('onyen')
+
+    if onyen is None:
+        return HttpResponseBadRequest('You are required to submit the onyen field.')
+
+    try:
+        pnm_checkin = PNM.objects.get(onyen=onyen)
+    except PNM.DoesNotExist:
+        return HttpResponse(status=400)
+
+    # we know that the PNM is in the database
+    event_type = request.POST.get('event_type')
+    if event_type is None:
+        return HttpResponseBadRequest('You must submit the event type.')
+
+    event_name = request.POST.get('event_name')
+    if event_name is None:
+        return HttpResponseBadRequest('You must submit the event name.')
+
+    kwargs = checkin_type(event_name, event_type)
+
+    try:
+        setattr(pnm_checkin, list(kwargs.keys())[0], list(kwargs.values())[0])
+        pnm_checkin.save()
+    except Exception as e:
+        print (e)
+        return HttpResponse(status=500)
+    
+    return JsonResponse({
+        'name': f'{pnm_checkin.first_name} {pnm_checkin.last_name}'
+    })
+
+
+def pnm_checkin(request):
+    event_type = request.POST.get('event_type')
+    if event_type is None:
+        return HttpResponseBadRequest('You must submit the event type.')
+
+    event_name = request.POST.get('event_name')
+    if event_name is None:
+        return HttpResponseBadRequest('You must submit the event name.')
+
+    kwargs = checkin_type(event_name, event_type)
+
+    onyen = request.POST.get('onyen')
+    if onyen is None:
+        return HttpResponseBadRequest('You must submit the onyen.')
+
+    first_name = request.POST.get('first_name')
+    if first_name is None:
+        return HttpResponseBadRequest('You must submit the first name.')
+
+    last_name = request.POST.get('last_name')
+    if last_name is None:
+        return HttpResponseBadRequest('You must submit the last name.')
+
+    email = request.POST.get('email')
+    if email is None:
+        return HttpResponseBadRequest('You must submit the email')
+
+    new_pnm = PNM(onyen=onyen, first_name=first_name,
+                  last_name=last_name, email=email, **kwargs)
+    try:
+        new_pnm.save()
+    except Exception as e:
+        print (e)
+        return HttpResponse(status=500)
+
+    return HttpResponse(status=201)
+
+    pass

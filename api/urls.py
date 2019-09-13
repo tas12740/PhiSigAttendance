@@ -10,5 +10,6 @@ urlpatterns = [
     path('recruitmentOnyen/', views.recruitment_onyen, name='recruitmentOnyen'),
     path('pnmCheckIn/', views.pnm_checkin, name='pnmCheckIn'),
     path('ipanelRegister/', views.register_ipanel, name='ipanelRegister'),
-    path('ipanelVote/', views.vote, name='ipanelvote')
+    path('ipanelVote/', views.vote, name='ipanelvote'),
+    path('ipanelResults/', views.ipanel_results, name='ipanelResults')
 ]

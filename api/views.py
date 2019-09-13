@@ -231,6 +231,7 @@ def register_ipanel(request):
         'code': code
     })
 
+
 def vote(request):
     data = request.POST
 
@@ -241,20 +242,20 @@ def vote(request):
     code = data.get('code')
     if data is None:
         return HttpResponseBadRequest('You must submit your passcode.')
-    
+
     ipanel_voter = IPanelAuth.objects.get(onyen=onyen)
 
     if code != ipanel_voter.passcode:
         return HttpResponseBadRequest('You entered the wrong passcode.')
 
     for key, value in data.items():
-        if key == 'onyen' or key == 'code' or key == 'csrfmiddlewaretoken': 
+        if key == 'onyen' or key == 'code' or key == 'csrfmiddlewaretoken':
             continue
 
         if Vote.objects.filter(vote_onyen=ipanel_voter, pnm_number=key).exists():
             continue
 
-        new_vote = Vote(vote_onyen = ipanel_voter, pnm_number=key, vote=value)
+        new_vote = Vote(vote_onyen=ipanel_voter, pnm_number=key, vote=value)
 
         try:
             new_vote.save()
@@ -262,4 +263,27 @@ def vote(request):
             return HttpResponseBadRequest(f'Vote failed for PNM {key}. Try again or contact an admin.')
 
     return HttpResponse(status=201)
-    
+
+
+def ipanel_results(request):
+    cutoff = request.POST.get('cutoff')
+
+    cutoff = int(cutoff) / 100
+
+    pnms = Vote.objects.values('pnm_number').distinct()
+
+    results = dict()
+
+    for pnm in pnms:
+        curr_pnm_number = pnm['pnm_number']
+        yes = Vote.objects.filter(pnm_number=curr_pnm_number, vote=Vote.YES).count()
+        no = Vote.objects.filter(pnm_number=curr_pnm_number, vote=Vote.NO).count()
+
+        percent = yes / (yes + no)
+
+        result = percent > cutoff
+
+        percent = percent * 100
+        results[curr_pnm_number] = f'Yes ({percent}%)' if result else f'No ({percent}%)'
+
+    return JsonResponse(results)

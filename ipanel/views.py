@@ -6,3 +6,6 @@ def register(request):
 
 def votes(request):
     return render(request, 'ipanel/vote.html')
+
+def results(request):
+    return render(request, 'ipanel/results.html')

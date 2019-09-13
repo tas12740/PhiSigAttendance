@@ -3,7 +3,7 @@ from django.http import HttpResponseNotAllowed, HttpResponseNotFound, JsonRespon
 
 from checkin.models import Event, Sibling, CheckIn, EventType
 from recruitment.models import PNM
-from ipanel.models import IPanelAuth
+from ipanel.models import IPanelAuth, Vote
 
 import datetime
 from string import ascii_lowercase
@@ -230,3 +230,36 @@ def register_ipanel(request):
     return JsonResponse({
         'code': code
     })
+
+def vote(request):
+    data = request.POST
+
+    onyen = data.get('onyen')
+    if onyen is None:
+        return HttpResponseBadRequest('You must submit the onyen.')
+
+    code = data.get('code')
+    if data is None:
+        return HttpResponseBadRequest('You must submit your passcode.')
+    
+    ipanel_voter = IPanelAuth.objects.get(onyen=onyen)
+
+    if code != ipanel_voter.passcode:
+        return HttpResponseBadRequest('You entered the wrong passcode.')
+
+    for key, value in data.items():
+        if key == 'onyen' or key == 'code' or key == 'csrfmiddlewaretoken': 
+            continue
+
+        if Vote.objects.filter(vote_onyen=ipanel_voter, pnm_number=key).exists():
+            continue
+
+        new_vote = Vote(vote_onyen = ipanel_voter, pnm_number=key, vote=value)
+
+        try:
+            new_vote.save()
+        except:
+            return HttpResponseBadRequest(f'Vote failed for PNM {key}. Try again or contact an admin.')
+
+    return HttpResponse(status=201)
+    

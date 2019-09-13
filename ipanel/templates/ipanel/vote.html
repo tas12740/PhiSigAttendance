@@ -1,0 +1,56 @@
+{% extends 'checkin/base.html' %}
+
+{% block head %}
+{% load static %}
+<script src="{% static 'ipanel/js/vote.js' %}"></script>
+{% endblock %}
+
+{% block content %}
+<div id="voteGen" class="my-2">
+    <form method="POST" id="voteGenForm">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="start">Start</label>
+            <input type="number" class="form-control" id="start">
+        </div>
+        <div class="form-group">
+            <label for="end">End</label>
+            <input type="number" class="form-control" id="end">
+        </div>
+        <button type="submit" class="btn btn-primary">Get Form</button>
+    </form>
+</div>
+<div id="votes" class="my-2">
+    <form method="POST" id="voteForm">
+        {% csrf_token %}
+        <div class="form-group">
+            <label class="sr-only">Onyen:</label>
+            <input type="text" required class="form-control" name="onyen" placeholder="Onyen" id="onyen" autocorrect="off" autocapitalize="none">
+        </div>
+        <div class="form-group">
+            <label class="sr-only">Passcode:</label>
+            <input type="text" required class="form-control" name="passcode" placeholder="Your Code" id="code" autocorrect="off" autocapitalize="none">
+        </div>
+        <button type="submit" class="btn btn-primary mt-2" id="votebtn">Vote</button>
+    </form>
+</div>
+
+<div class="modal" tabindex="-1" role="dialog" id="voteModal">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="voteModalTitle">Title</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p id="voteModalContent">Body</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

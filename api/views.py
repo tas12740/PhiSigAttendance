@@ -3,8 +3,11 @@ from django.http import HttpResponseNotAllowed, HttpResponseNotFound, JsonRespon
 
 from checkin.models import Event, Sibling, CheckIn, EventType
 from recruitment.models import PNM
+from ipanel.models import IPanelAuth
 
 import datetime
+from string import ascii_lowercase
+from random import choice
 
 
 def find_event(request):
@@ -152,9 +155,9 @@ def recruitment_onyen(request):
         setattr(pnm_checkin, list(kwargs.keys())[0], list(kwargs.values())[0])
         pnm_checkin.save()
     except Exception as e:
-        print (e)
+        print(e)
         return HttpResponse(status=500)
-    
+
     return JsonResponse({
         'name': f'{pnm_checkin.first_name} {pnm_checkin.last_name}'
     })
@@ -192,9 +195,38 @@ def pnm_checkin(request):
     try:
         new_pnm.save()
     except Exception as e:
-        print (e)
+        print(e)
         return HttpResponse(status=500)
 
     return HttpResponse(status=201)
 
-    pass
+
+def register_ipanel(request):
+    data = request.POST
+
+    onyen = data.get('onyen')
+    if onyen is None:
+        return HttpResponseBadRequest('You must submit the onyen.')
+
+    if IPanelAuth.objects.filter(onyen=onyen).exists():
+        return HttpResponseBadRequest('You have already checked in to this I Panel. Please contact your friendly admin to get your code.')
+
+    nums = list(range(0, 10))
+    nums = [str(x) for x in nums]
+    nums = ''.join(nums)
+    choices = ascii_lowercase + nums
+    code = ''.join(choice(choices) for _ in range(4))
+
+    while IPanelAuth.objects.filter(passcode=code).exists():
+        code = ''.join(choice(choices) for _ in range(4))
+
+    new_ipanel_registration = IPanelAuth(onyen=onyen, passcode=code)
+
+    try:
+        new_ipanel_registration.save()
+    except:
+        return HttpResponse(status=500)
+
+    return JsonResponse({
+        'code': code
+    })

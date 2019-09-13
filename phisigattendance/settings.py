@@ -33,6 +33,7 @@ ALLOWED_HOSTS = ['*']
 INSTALLED_APPS = [
     'checkin.apps.CheckinConfig',
     'recruitment.apps.RecruitmentConfig',
+    'ipanel.apps.IpanelConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

@@ -20,5 +20,6 @@ urlpatterns = [
     path('checkin/', include('checkin.urls', namespace='checkin')),
     path('admin/', admin.site.urls),
     path('api/', include('api.urls', namespace='api')),
-    path('recruitment/', include('recruitment.urls', namespace='recruitment'))
+    path('recruitment/', include('recruitment.urls', namespace='recruitment')),
+    path('ipanel/', include('ipanel.urls', namespace='ipanel'))
 ]

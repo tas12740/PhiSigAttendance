@@ -243,7 +243,10 @@ def vote(request):
     if data is None:
         return HttpResponseBadRequest('You must submit your passcode.')
 
-    ipanel_voter = IPanelAuth.objects.get(onyen=onyen)
+    try:
+        ipanel_voter = IPanelAuth.objects.get(onyen=onyen)
+    except IPanelAuth.DoesNotExist:
+        return HttpResponseBadRequest('You need to register!')
 
     if code != ipanel_voter.passcode:
         return HttpResponseBadRequest('You entered the wrong passcode.')
@@ -268,18 +271,30 @@ def vote(request):
 def ipanel_results(request):
     cutoff = request.POST.get('cutoff')
 
-    cutoff = int(cutoff) / 100
+    try:
+        cutoff = int(cutoff) / 100
+    except Exception as e:
+        return HttpResponseBadRequest(e)
 
-    pnms = Vote.objects.values('pnm_number').distinct()
+    try:
+        pnms = Vote.objects.order_by().values_list('pnm_number', flat=True).distinct()
+    except Exception as e:
+        return HttpResponseBadRequest(e)
 
     results = dict()
 
     for pnm in pnms:
-        curr_pnm_number = pnm['pnm_number']
-        yes = Vote.objects.filter(pnm_number=curr_pnm_number, vote=Vote.YES).count()
-        no = Vote.objects.filter(pnm_number=curr_pnm_number, vote=Vote.NO).count()
+        curr_pnm_number = pnm #['pnm_number']
+        try:
+            yes = Vote.objects.filter(pnm_number=curr_pnm_number, vote=Vote.YES).count()
+            no = Vote.objects.filter(pnm_number=curr_pnm_number, vote=Vote.NO).count()
+        except Exception as e:
+            return HttpResponseBadRequest(e)
 
         percent = yes / (yes + no)
+
+        if yes + no == 0:
+            continue
 
         result = percent > cutoff
 

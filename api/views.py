@@ -291,12 +291,12 @@ def ipanel_results(request):
         except Exception as e:
             return HttpResponseBadRequest(e)
 
-        percent = yes / (yes + no)
-
         if yes + no == 0:
             continue
 
-        result = percent > cutoff
+        percent = yes / (yes + no)
+
+        result = percent >= cutoff
 
         percent = percent * 100
         results[curr_pnm_number] = f'Yes ({percent}%)' if result else f'No ({percent}%)'

@@ -38,7 +38,7 @@ $(document).ready(function () {
             error: () => {
                 $('#additionalInformationDiv').slideDown(2000);
                 $('#onyenAdd').val($('#onyen').val());
-                $('#onyenForm').slideUp(2000);
+                $('#onyenFormDiv').slideUp(2000);
             }
         });
     });

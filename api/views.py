@@ -84,8 +84,12 @@ def checkin_type(event_name, event_type):
         return {
             'open_friday': 1
         }
-    if 'First' in event_type:
+    try:
         event_type_obj = EventType.objects.get(name=event_type)
+    except EventType.DoesNotExist:
+        return False
+    
+    if 'First' in event_type:
         events = Event.objects.filter(
             event_type=event_type_obj).order_by('date_time')
         for ind, eve in enumerate(events):
@@ -105,7 +109,7 @@ def checkin_type(event_name, event_type):
         return False
     if 'Second' in event_type:
         events = Event.objects.filter(
-            event_type=event_type).order_by('date_time')
+            event_type=event_type_obj).order_by('date_time')
         for ind, eve in enumerate(events):
             if event_name == eve.name:
                 if ind == 0:
@@ -150,6 +154,8 @@ def recruitment_onyen(request):
         return HttpResponseBadRequest('You must submit the event name.')
 
     kwargs = checkin_type(event_name, event_type)
+    if not kwargs:
+        return HttpResponseBadRequest('Failed to find a valid event for this submission.')
 
     try:
         setattr(pnm_checkin, list(kwargs.keys())[0], list(kwargs.values())[0])
@@ -284,10 +290,9 @@ def ipanel_results(request):
     results = dict()
 
     for pnm in pnms:
-        curr_pnm_number = pnm #['pnm_number']
         try:
-            yes = Vote.objects.filter(pnm_number=curr_pnm_number, vote=Vote.YES).count()
-            no = Vote.objects.filter(pnm_number=curr_pnm_number, vote=Vote.NO).count()
+            yes = Vote.objects.filter(pnm_number=pnm, vote=Vote.YES).count()
+            no = Vote.objects.filter(pnm_number=pnm, vote=Vote.NO).count()
         except Exception as e:
             return HttpResponseBadRequest(e)
 
@@ -299,6 +304,6 @@ def ipanel_results(request):
         result = percent >= cutoff
 
         percent = percent * 100
-        results[curr_pnm_number] = f'Yes ({percent}%)' if result else f'No ({percent}%)'
+        results[pnm] = f'Yes ({percent}%)' if result else f'No ({percent}%)'
 
     return JsonResponse(results)

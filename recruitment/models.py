@@ -27,5 +27,10 @@ class PNM(models.Model):
     potluck = models.BooleanField(
         verbose_name='Potluck', null=True, blank=True)
 
+    fact_sheet = models.BooleanField(
+        verbose_name='Fact Sheet', null=True, blank=True)
+    ipanel_number = models.IntegerField(
+        verbose_name='IPanel Order Number', null=True, blank=True)
+
     def __str__(self):
         return f'{self.first_name} {self.last_name} ({self.onyen})'

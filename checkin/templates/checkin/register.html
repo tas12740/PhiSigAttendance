@@ -11,23 +11,70 @@
     {% csrf_token %}
     <div class="form-group">
         <label class="sr-only">First Name:</label>
-        <input type="text" required class="form-control" placeholder="First Name" id="firstName" autocorrect="off" autocapitalize="none">
+        <input type="text" required class="form-control" placeholder="First Name" id="firstName" autocorrect="off"
+            autocapitalize="none">
     </div>
     <div class="form-group">
         <label class="sr-only">Last Name:</label>
-        <input type="text" required class="form-control" placeholder="Last Name" id="lastName" autocorrect="off" autocapitalize="none">
+        <input type="text" required class="form-control" placeholder="Last Name" id="lastName" autocorrect="off"
+            autocapitalize="none">
     </div>
     <div class="form-group">
         <label class="sr-only">Onyen:</label>
-        <input type="text" required class="form-control" placeholder="Onyen" id="onyen" autocorrect="off" autocapitalize="none">
+        <input type="text" required class="form-control" placeholder="Onyen" id="onyen" autocorrect="off"
+            autocapitalize="none">
     </div>
     <div class="form-group">
         <label class="sr-only">Email:</label>
-        <input type="email" required class="form-control" placeholder="Email" id="email" autocorrect="off" autocapitalize="none">
+        <input type="email" required class="form-control" placeholder="Email" id="email" autocorrect="off"
+            autocapitalize="none">
+    </div>
+    <div class="form-group">
+        <label class="sr-only">Phone Number:</label>
+        <input type="tel" required class="form-control" placeholder="Phone Number" id="phone" autocorrect="off"
+            autocapitalize="none">
+    </div>
+    <div class="form-group">
+        <p class="my-1">Preferred Contact</p>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="preferredContact" id="phoneContact" value="Text">
+            <label class="form-check-label" for="phoneContact">Text</label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="preferredContact" id="emailContact" value="Email">
+            <label class="form-check-label" for="emailContact">Email</label>
+        </div>
     </div>
     <div class="form-group">
         <label class="sr-only">Pledge Class:</label>
-        <input type="text" required class="form-control" placeholder="Pledge Class" id="pledgeClass" autocorrect="off" autocapitalize="none">
+        <input type="text" required class="form-control" placeholder="Pledge Class" id="pledgeClass" autocorrect="off"
+            autocapitalize="none" aria-describedby="pledgeClassHelper">
+        <small id="pledgeClassHelper" class="form-text text-muted">
+            Please enter your pledge class without an 's' (e.g. Beta Zeta).
+        </small>
+    </div>
+    <div class="form-group">
+        <label class="sr-only">Pronouns</label>
+        <input type="text" required class="form-control" placeholder="Pronouns" id="pronouns" autocorrect="off"
+            autocapitalize="none" aria-describedby="pronounsHelper">
+        <small id="pronounsHelper" class="form-text text-muted">
+            Please input your pronouns as subjective/objective/possessive (e.g. he/him/his, they/them/theirs,
+            ze/hir/hirs, etc.). If you use multiple pronouns, feel free to enter all the ones you use. If you would
+            like people to only refer to you by name, please enter that information instead. If your pronouns change at
+            any point, please feel free to reach out to the Mediators or anyone with the ability to change the
+            information in the system. Your information will not be shared with anyone externally and shall only be
+            given to new Initiates and put in the Yellow Pages.
+        </small>
+    </div>
+    <div class="form-group">
+        <label class="sr-only">House</label>
+        <select class="selectpicker show-tick form-control" required title="House" id="house">
+            <option value="Bigelow">Bigelow</option>
+            <option value="Harryhill">Harryhill</option>
+            <option value="Rollawood">Rollawood</option>
+            <option value="Torchia">Torchia</option>
+            <option value="No House">No House</option>
+        </select>
     </div>
     <button type="submit" class="btn btn-primary">Register</button>
 </form>

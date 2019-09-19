@@ -7,7 +7,8 @@ class Sibling(models.Model):
         ('Rollawood', 'Rollawood'),
         ('Torchia', 'Torchia'),
         ('Harryhill', 'Harryhill'),
-        ('Bigelow', 'Bigelow')
+        ('Bigelow', 'Bigelow'),
+        ('No House', 'No House')
     ]
 
     INACTIVITY_CHOICES = [
@@ -18,6 +19,12 @@ class Sibling(models.Model):
     last_name = models.CharField(max_length=20, verbose_name='Last Name')
     onyen = models.CharField(max_length=20, unique=True, verbose_name='Onyen')
     email = models.EmailField(verbose_name='Email')
+    phone_number = models.CharField(
+        max_length=20, null=True, blank=True, verbose_name='Phone Number')
+    preferred_contact = models.CharField(
+        max_length=10, choices=[('Text', 'Text'), ('Email', 'Email')], null=True, blank=True)
+    pronouns = models.CharField(
+        max_length=50, null=True, blank=True, verbose_name='Pronouns')
     house = models.CharField(
         max_length=10, choices=HOUSE_CHOICES, null=True, blank=True, verbose_name='House')
     status = models.CharField(

@@ -3,7 +3,7 @@ from django.http import HttpResponseNotAllowed, HttpResponseNotFound, JsonRespon
 
 from checkin.models import Event, Sibling, CheckIn, EventType
 from recruitment.models import PNM
-from ipanel.models import IPanelAuth, Vote
+from ipanel.models import IPanelAuth, Vote, PNMIPanel
 
 import datetime
 from string import ascii_lowercase
@@ -88,7 +88,7 @@ def checkin_type(event_name, event_type):
         event_type_obj = EventType.objects.get(name=event_type)
     except EventType.DoesNotExist:
         return False
-    
+
     if 'First' in event_type:
         events = Event.objects.filter(
             event_type=event_type_obj).order_by('date_time')
@@ -257,11 +257,28 @@ def vote(request):
     if code != ipanel_voter.passcode:
         return HttpResponseBadRequest('You entered the wrong passcode.')
 
+    success_pnms = []
+    error_pnms = []
+    error_statuses = []
     for key, value in data.items():
         if key == 'onyen' or key == 'code' or key == 'csrfmiddlewaretoken':
             continue
 
         if Vote.objects.filter(vote_onyen=ipanel_voter, pnm_number=key).exists():
+            error_pnms.append(key)
+            error_statuses.append(f'You already voted on PNM {key}')
+            continue
+
+        try:
+            pnm_status = PNMIPanel.objects.get(number=key)
+        except PNMIPanel.DoesNotExist:
+            error_pnms.append(key)
+            error_statuses.append(f'PNM {key} has not been set up')
+            continue
+        
+        if pnm_status.status == PNMIPanel.LOCKED:
+            error_pnms.append(key)
+            error_statuses.append(f'PNM {key} is locked')
             continue
 
         new_vote = Vote(vote_onyen=ipanel_voter, pnm_number=key, vote=value)
@@ -271,7 +288,11 @@ def vote(request):
         except:
             return HttpResponseBadRequest(f'Vote failed for PNM {key}. Try again or contact an admin.')
 
-    return HttpResponse(status=201)
+    return JsonResponse({
+        'success_pnms' : success_pnms,
+        'error_pnms' : error_pnms,
+        'error_statuses' : error_statuses
+    })
 
 
 def ipanel_results(request):
@@ -307,3 +328,83 @@ def ipanel_results(request):
         results[pnm] = f'Yes ({percent}%)' if result else f'No ({percent}%)'
 
     return JsonResponse(results)
+
+
+def pnm_status(request):
+    if request.method == 'POST':
+        success_pnms = []
+        error_pnms = []
+        # post list of number, status
+        for key in request.POST:
+            if key == 'csrfmiddlewaretoken':
+                continue
+            try:
+                pnm_status_obj = PNMIPanel.objects.get(number=key)
+            except PNMIPanel.DoesNotExist:
+                error_pnms.append(key)
+                continue
+
+            if request.POST[key] == 'L':
+                status = PNMIPanel.LOCKED
+            else:
+                status = PNMIPanel.OPEN
+
+            if status == pnm_status_obj.status:
+                continue
+
+            pnm_status_obj.status = status
+            try:
+                pnm_status_obj.save()
+                success_pnms.append(key)
+            except:
+                error_pnms.append(key)
+                continue
+
+        return JsonResponse({
+            'success_pnms': success_pnms,
+            'error_pnms': error_pnms
+        })
+
+    pnms = PNMIPanel.objects.all()
+    result = dict()
+    for pnm in pnms:
+        result[pnm.number] = pnm.status
+    return JsonResponse(result)
+
+
+def generate_status(request):
+    if request.method != 'POST':
+        return HttpResponseNotAllowed(permitted_methods=['POST'])
+
+    start = request.POST.get('start')
+    if start is None:
+        return HttpResponseBadRequest('You must submit a start to the range.')
+    try:
+        start = int(start)
+    except Exception as e:
+        return HttpResponseBadRequest(e)
+
+    end = request.POST.get('end')
+    if end is None:
+        return HttpResponseBadRequest('You must submit an end to the range.')
+    try:
+        end = int(end)
+    except Exception as e:
+        return HttpResponseBadRequest(e)
+
+    if end < start:
+        return HttpResponseBadRequest('Start must be less than or equal to the end.')
+
+    failed = []
+    for num in range(start, end+1):
+        new_pnm_status = PNMIPanel(number=num, status=PNMIPanel.LOCKED)
+
+        try:
+            new_pnm_status.save()
+        except:
+            failed.append(num)
+            continue
+
+    return JsonResponse({
+        'failed': failed
+    })

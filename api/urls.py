@@ -11,5 +11,7 @@ urlpatterns = [
     path('pnmCheckIn/', views.pnm_checkin, name='pnmCheckIn'),
     path('ipanelRegister/', views.register_ipanel, name='ipanelRegister'),
     path('ipanelVote/', views.vote, name='ipanelvote'),
-    path('ipanelResults/', views.ipanel_results, name='ipanelResults')
+    path('ipanelResults/', views.ipanel_results, name='ipanelResults'),
+    path('ipanelStatus/', views.pnm_status, name='ipanelStatus'),
+    path('generateIPanelStatus/', views.generate_status, name='generateIPanelStatus')
 ]

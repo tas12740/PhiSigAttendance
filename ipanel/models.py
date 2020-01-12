@@ -41,7 +41,8 @@ class PNMIPanel(models.Model):
     ]
 
     number = models.IntegerField(verbose_name='Number', unique=True)
-    status = models.CharField(max_length=10, choices=STATUS_CHOICES, verbose_name='Status')
+    status = models.CharField(
+        max_length=10, choices=STATUS_CHOICES, verbose_name='Status')
     # TODO future: make this link to PNM or a name to easily tell who made it
 
     def __str__(self):

@@ -69,16 +69,16 @@ $(document).ready(function () {
             data: data,
             success: (response) => {
                 $('#voteModalTitle').html('Success!');
-                const successText = (response.success_pnms.length == 0) ? 'No votes were successfully recorded. ' : 'The following votes were successfully recorded: ' + response.success_pnms.join(', ') + '. '; 
+                const successText = (response.success_pnms.length == 0) ? 'No votes were successfully recorded. ' : 'The following votes were successfully recorded: ' + response.success_pnms.join(', ') + '. ';
                 let errorText;
-                if(response.error_pnms.length == 0) {
+                if (response.error_pnms.length == 0) {
                     errorText = '';
                 } else {
                     let error_num = response.error_pnms.length;
                     errorText = 'The following failed: ';
-                    for(let i = 0; i < error_num; i ++) {
+                    for (let i = 0; i < error_num; i++) {
                         errorText += response.error_pnms[i] + ' (' + response.error_statuses[i] + ')';
-                        if(i != error_num - 1) {
+                        if (i != error_num - 1) {
                             errorText += ', ';
                         }
                     }

@@ -60,16 +60,16 @@ $(document).ready(function () {
         }
     });
 
-    $('#statusForm').on('submit', function(event) {
+    $('#statusForm').on('submit', function (event) {
         event.preventDefault();
         const rows = $('tbody tr');
         const num_rows = rows.length;
 
         let data = {
-            'csrfmiddlewaretoken' : $('input[name="csrfmiddlewaretoken"]').val()
+            'csrfmiddlewaretoken': $('input[name="csrfmiddlewaretoken"]').val()
         };
 
-        for(let i = 0; i < num_rows; i++) {
+        for (let i = 0; i < num_rows; i++) {
             const curr_row = rows.eq(i);
             const checked_box = curr_row.find(':checked');
             const val = checked_box.val();

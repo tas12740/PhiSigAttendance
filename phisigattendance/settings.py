@@ -34,6 +34,7 @@ INSTALLED_APPS = [
     'checkin.apps.CheckinConfig',
     'recruitment.apps.RecruitmentConfig',
     'ipanel.apps.IpanelConfig',
+    'root.apps.RootConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

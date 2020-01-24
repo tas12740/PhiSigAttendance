@@ -26,167 +26,27 @@
     <link rel="stylesheet" type="text/css" href="{% static 'checkin/vendor/css/bootstrap-reboot.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'checkin/vendor/css/bootstrap-select.css' %}">
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
 
     <script src="{% static 'root/js/index.js' %}"></script>
-    <link rel="stylesheet" type="text/css" src="{% static 'root/css/index.css' %}">
-    <style>
-        @font-face {
-            font-family: bebas;
-            src: url('/static/root/fonts/BebasNeue-Regular.otf');
-        }
-
-        @font-face {
-            font-family: mont;
-            src: url('/static/root/fonts/Montserrat-ExtraLight.ttf');
-        }
-
-        .carousel-item>img {
-            min-height: 75vh;
-            max-height: 75vh;
-        }
-        
-        .navbar-custom {
-            margin: auto;
-        }
-
-        .navbar-custom .navbar-brand,
-        .navbar-custom .nav-link {
-            color: #fff;
-        }
-
-        .navbar-custom .navbar-brand:hover,
-        .navbar-custom .nav-link:hover {
-            background-color: rgb(23, 98, 118);
-        }
-
-        .nav-item {
-            margin-left: 40px;
-            margin-right: 40px;
-            font-family: bebas;
-            font-size: 1.25em;
-            padding-left: 10px;
-            padding-right: 10px;
-        }
-
-        #loader {
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-        }
-
-        #banner {
-            width: 100%;
-        }
-
-        body {
-            background-color: rgb(87, 176, 170);
-        }
-
-        h1, h3 {
-            font-family: bebas;
-            color: white;
-        }
-
-        #welcome-div,
-        #social-div {
-            margin-top: 60px;
-            text-align: center;
-            margin-left: 5%;
-            margin-right: 5%;
-        }
-
-        p, #footer > div > a {
-            font-family: mont;
-            color: white;
-        }
-
-        #welcome-text {
-            margin-top: 20px;
-            font-size: 1.25em;
-        }
-
-        .fa {
-            font-size: 30px;
-            width: 60px;
-            height: 60px;
-            line-height: 60px;
-            text-align: center;
-            text-decoration: none;
-            border-radius: 50%;
-            background-color: rgb(23, 98, 118);
-            color: white;
-            margin-left: 10px;
-            margin-right: 10px;
-            margin-top: 10px;
-        }
-
-        .fa:hover {
-            text-decoration: none;
-            background-color: white;
-            color: rgb(23, 98, 118);
-        }
-
-        #insta-div {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-around;
-            margin-top: 60px;
-            text-align: center;
-            margin-left: 5%;
-            margin-right: 5%;
-        }
-
-        .insta-pic {
-            max-width: 30%;
-            margin-bottom: 2.5%;
-            flex: 0 0 32%;
-        }
-
-        .navbar-toggler-icon {
-            color: white;
-        }
-
-        #footer {
-            padding-top: 25px;
-            background-color: rgb(23, 98, 118);
-            padding-bottom: 25px;
-        }
-
-        #footer > div {
-            display: inline-block;
-            width: 49%;
-            height: 100%;
-        }
-
-        #footer > div > a {
-            text-decoration: underline;
-        }
-
-        #footer > div > a:hover {
-            font-weight: bold;
-        }
-
-        #contact-div > * {
-            margin-left: 10%;
-        }
-    </style>
+    <link rel="stylesheet" type="text/css" href="{% static 'root/css/index.css' %}">
 </head>
 
 <body>
-    <img id="banner" src="{% static 'root/img/banner3.png' %}" alt="PSP-AK Banner">
+    <img id="banner" src="{% static 'root/img/banner4.png' %}" alt="PSP-AK Banner">
 
     <nav class="navbar navbar-expand-lg navbar-custom">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarExtra"
+        <button id="toggle" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarExtra"
             aria-controls="navbarExtra" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
+            <span class="navbar-toggler-icon">
+                <i class="fas fa-bars"></i>
+            </span>
         </button>
 
         <div class="collapse navbar-collapse" id="navbarExtra">
             <ul class="navbar-nav mx-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="#" id="home" role="button">Home</a>
+                    <a class="nav-link" href="/" id="home" role="button">Home</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#" id="home" role="button">About Us</a>
@@ -270,38 +130,78 @@
     <div id="social-div">
         <h1 id="social">Check us out on Social Media!</h1>
         <a target="_blank" href="https://www.facebook.com/phisigmapiunc/" rel="noopener noreferrer"
-            class="fa fa-facebook"></a>
-        <a target="_blank" href="https://twitter.com/PhiSigUNC" rel="noopener noreferrer" class="fa fa-twitter"></a>
+            class="fab fa-facebook"></a>
+        <a target="_blank" href="https://twitter.com/PhiSigUNC" rel="noopener noreferrer" class="fab fa-twitter"></a>
         <a target="_blank" href="https://www.instagram.com/phisigmapiunc/" rel="noopener noreferrer"
-            class="fa fa-instagram"></a>
+            class="fab fa-instagram"></a>
         <a target="_blank" href="https://heellife.unc.edu/organization/phisigpi" rel="noopener noreferrer"
             class="fa fa-university"></a>
     </div>
 
     <div id="insta-div">
-        <img class="insta-pic" src="{% static 'root/img/insta1.jpeg' %}">
-        <img class="insta-pic" src="{% static 'root/img/insta7.jpg' %}">
-        <img class="insta-pic" src="{% static 'root/img/insta9.jpg' %}">
-        <img class="insta-pic" src="{% static 'root/img/insta6.jpg' %}">
-        <img class="insta-pic" src="{% static 'root/img/insta2.jpg' %}">
-        <img class="insta-pic" src="{% static 'root/img/insta5.jpg' %}">
-        <img class="insta-pic" src="{% static 'root/img/insta8.jpg' %}">
-        <img class="insta-pic" src="{% static 'root/img/insta4.jpg' %}">
-        <img class="insta-pic" src="{% static 'root/img/insta3.jpg' %}">
+        <a target="_blank" rel="noopener noreferrer"
+            href="https://www.instagram.com/p/B7UiKxSF-ou/?utm_source=ig_web_copy_link">
+            <img class="insta-pic" src="{% static 'root/img/insta1.jpeg' %}">
+        </a>
+        <a target="_blank" rel="noopener noreferrer"
+            href="https://www.instagram.com/p/B5q7Rm2FjcU/?utm_source=ig_web_copy_link">
+            <img class="insta-pic" src="{% static 'root/img/insta7.jpg' %}">
+        </a>
+        <a target="_blank" rel="noopener noreferrer"
+            href="https://www.instagram.com/p/B5l_bDElecB/?utm_source=ig_web_copy_link">
+            <img class="insta-pic" src="{% static 'root/img/insta9.jpg' %}">
+        </a>
+        <a target="_blank" rel="noopener noreferrer"
+            href="https://www.instagram.com/p/B5jPv7JliNQ/?utm_source=ig_web_copy_link">
+            <img class="insta-pic" src="{% static 'root/img/insta6.jpg' %}">
+        </a>
+        <a target="_blank" rel="noopener noreferrer"
+            href="https://www.instagram.com/p/B5anEYzFWw2/?utm_source=ig_web_copy_link">
+            <img class="insta-pic" src="{% static 'root/img/insta2.jpg' %}">
+        </a>
+        <a target="_blank" rel="noopener noreferrer"
+            href="https://www.instagram.com/p/B5Y5_6ClP6n/?utm_source=ig_web_copy_link">
+            <img class="insta-pic" src="{% static 'root/img/insta5.jpg' %}">
+        </a>
+        <a target="_blank" rel="noopener noreferrer"
+            href="https://www.instagram.com/p/B5THBVVFD73/?utm_source=ig_web_copy_link">
+            <img class="insta-pic" src="{% static 'root/img/insta8.jpg' %}">
+        </a>
+        <a target="_blank" rel="noopener noreferrer"
+            href="https://www.instagram.com/p/B5DohCtlWav/?utm_source=ig_web_copy_link">
+            <img class="insta-pic" src="{% static 'root/img/insta4.jpg' %}">
+        </a>
+        <a target="_blank" rel="noopener noreferrer"
+            href="https://www.instagram.com/p/B41Fm-tFTyP/?utm_source=ig_web_copy_link">
+            <img class="insta-pic" src="{% static 'root/img/insta3.jpg' %}">
+        </a>
     </div>
 
-    <!-- <div id="footer">
+    <div id="footer">
         <div id="contact-div">
-            <h3>Chapter Contact</h3>
+            <h3>Alpha Kappa</h3>
+            <p>University of North Carolina at Chapel Hill</p>
+            <h4>PO Box</h4>
+            <p>Phi Sigma Pi National Honor Fraternity, Box 187, Frank Porter Graham Student Union, UNC-CH Campus
+                Box 5210, Chapel Hill, NC, 27599-5210</p>
+            <h4>Email Us</h4>
             <a target="_blank" rel="noopener noreferrer" href="mailto:pspakleadership@gmail.com">PSP AK Leadership</a>
-            <br /> 
             <a target="_blank" rel="noopener noreferrer" href="mailto:pspakrecruitment@gmail.com">PSP AK Recruitment</a>
         </div>
-        <div>
+        <div id="connect-div">
             <h3>Connect With Phi Sig</h3>
-
+            <div id="social-footer">
+                <a target="_blank" href="https://www.facebook.com/phisigmapiunc/" rel="noopener noreferrer"
+                    class="fab fa-facebook"></a>
+                <a target="_blank" href="https://twitter.com/PhiSigUNC" rel="noopener noreferrer"
+                    class="fab fa-twitter"></a>
+                <a target="_blank" href="https://www.instagram.com/phisigmapiunc/" rel="noopener noreferrer"
+                    class="fab fa-instagram"></a>
+                <a target="_blank" href="https://heellife.unc.edu/organization/phisigpi" rel="noopener noreferrer"
+                    class="fa fa-university"></a>
+            </div>
         </div>
-    </div> -->
+    </div>
 
     <img src="{% static 'checkin/img/spinner.gif' %}" id="loader" alt="Loader..." style="display:none;">
 </body>

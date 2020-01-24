@@ -1,25 +1,80 @@
-.carousel-img {
-    max-height: 75vh !important;
+@font-face {
+    font-family: bebas;
+    src: url('/static/root/fonts/BebasNeue-Regular.otf');
 }
 
-.carousel-caption>h5,
-.carousel-caption>p {
-    color: #4e2582 !important;
+@font-face {
+    font-family: mont;
+    src: url('/static/root/fonts/Montserrat-ExtraLight.ttf');
+}
+
+@media only screen and (max-width: 1000px) {
+    .carousel-item>img {
+        min-height: 25vh;
+        max-height: 25vh;
+    }
+    p, #welcome-text {
+        font-size: 3em;
+    }
+    #contact-div>p, #contact-div>a {
+        font-size: 2em;
+    }
+    h1 {
+        font-size: 5em;
+    }
+    h3 {
+        font-size: 3em;
+    }
+    h4 {
+        font-size: 2.5em;
+    }
+    #social-div>.fa, #social-div>.fab {
+        font-size: 60px;
+        width: 120px;
+        height: 120px;
+        line-height: 120px;
+    }
+    nav a {
+        font-size: 2em;
+    }
+}
+
+#toggle {
+    color: rgb(23, 98, 118);
+    background-color: white;
+    min-height: 30px;
+    line-height: 30px;
+    min-width: 30px;
+}
+
+.fa-bars {
+    color: rgb(23, 98, 118);
+}
+
+.carousel-item>img {
+    min-height: 75vh;
+    max-height: 75vh;
 }
 
 .navbar-custom {
-    background-color: #4e2582;
+    margin: auto;
 }
 
-.navbar-custom .navbar-brand,
-.navbar-custom .nav-link {
-    color: #ffee01;
+.navbar-custom .navbar-brand, .navbar-custom .nav-link {
+    color: #fff;
 }
 
-.navbar-custom .navbar-brand:hover,
-.navbar-custom .nav-link:hover {
-    background-color: #35195B;
-    color: #E5D600;
+.navbar-custom .navbar-brand:hover, .navbar-custom .nav-link:hover {
+    background-color: rgb(23, 98, 118);
+}
+
+.nav-item {
+    margin-left: 40px;
+    margin-right: 40px;
+    font-family: bebas;
+    font-size: 1.25em;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
 #loader {
@@ -27,4 +82,127 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+}
+
+#banner {
+    width: 100%;
+}
+
+body {
+    background-color: rgb(87, 176, 170);
+}
+
+h1, h3, h4 {
+    font-family: bebas;
+    color: white;
+}
+
+#welcome-div, #social-div {
+    margin-top: 60px;
+    text-align: center;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+p, #footer>div>a {
+    font-family: mont;
+    color: white;
+}
+
+#welcome-text {
+    margin-top: 20px;
+    font-size: 1.25em;
+}
+
+.fa, .fab {
+    font-size: 30px;
+    width: 60px;
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 50%;
+    background-color: rgb(23, 98, 118);
+    color: white;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 10px;
+}
+
+#social-div>.fa:hover, #social-div>.fab:hover {
+    text-decoration: none;
+    background-color: white;
+    color: rgb(23, 98, 118);
+}
+
+#insta-div {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-top: 60px;
+    text-align: center;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+#insta-div>* {
+    max-width: 30%;
+    margin-bottom: 2.5%;
+    flex: 0 0 32%;
+}
+
+#insta-div>*>img {
+    max-width: 100%;
+}
+
+#insta-div>*>img:hover {
+    transform: scale(1.1);
+}
+
+.navbar-toggler-icon {
+    color: white;
+}
+
+#footer {
+    padding-top: 25px;
+    background-color: rgb(23, 98, 118);
+    padding-bottom: 25px;
+}
+
+#footer>div {
+    display: table-cell;
+    width: 49%;
+    height: 100%;
+}
+
+#contact-div>a {
+    text-decoration: underline;
+}
+
+#contact-div>a:hover {
+    font-weight: bold;
+}
+
+#contact-div>*, #connect-div>* {
+    margin-left: 10%;
+    margin-right: 10%;
+    display: block;
+}
+
+#social-footer>.fa, #social-footer>.fab {
+    border-radius: 0%;
+    color: rgb(23, 98, 118);
+    background-color: white;
+}
+
+#social-footer>.fa:hover, #social-footer>.fab:hover {
+    text-decoration: none;
+    border: 1px solid white;
+    color: white;
+    background-color: rgb(23, 98, 118);
+}
+
+#connect-div>* {
+    position: relative;
+    top: 0;
 }

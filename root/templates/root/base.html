@@ -8,6 +8,9 @@
     <link rel="icon" type="image/png" sizes="32x32" href="{% static 'root/favicon/favicon-32x32.png' %}">
     <link rel="icon" type="image/png" sizes="16x16" href="{% static 'root/favicon/favicon-16x16.png' %}">
     <link rel="manifest" href="{% static 'root/favicon/site.webmanifest' %}">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
 
     <link rel="apple-touch-icon" sizes="57x57" href="{% static 'root/favicon/apple-icon-57x57.png' %}">
     <link rel="apple-touch-icon" sizes="60x60" href="{% static 'root/favicon/apple-icon-60x60.png' %}">
@@ -22,9 +25,7 @@
     <link rel="icon" type="image/png" sizes="96x96" href="{% static 'root/favicon/favicon-96x96.png' %}">
     <link rel="icon" type="image/png" sizes="16x16" href="{% static 'root/favicon/favicon-16x16.png' %}">
 
-    <meta name="msapplication-TileColor" content="#ffffff">
-    <meta name="msapplication-TileImage" content="{% static 'root/favicon/ms-icon-144x144.png' %}">
-    <meta name="theme-color" content="#ffffff">
+    <meta name="msapplication-TileImage" content="{% static 'root/favicon/ms-icon-144x144.png' %}"> 
 
     <script src="{%  static 'root/vendor/js/jquery-3.4.1.js' %}"></script>
     <script src="{% static 'root/vendor/js/popper.min.js' %}"></script>
@@ -48,7 +49,9 @@
 </head>
 
 <body>
-    <img id="banner" src="{% static 'root/img/banner4.png' %}" alt="PSP-AK Banner">
+    <a href="/">
+        <img id="banner" src="{% static 'root/img/banner4.png' %}" alt="PSP-AK Banner">
+    </a>
 
     <nav class="navbar navbar-expand-lg navbar-custom">
         <button id="toggle" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarExtra"

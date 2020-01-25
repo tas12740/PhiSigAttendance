@@ -14,9 +14,14 @@
     }
 }
 
-.carousel-item>img {
-    min-height: 75vh;
-    max-height: 75vh;
+@media only screen and (min-width: 1001px) {
+    #welcome-text {
+        font-size: 1.25em;
+    }
+    .carousel-item>img {
+        min-height: 75vh;
+        max-height: 75vh;
+    }
 }
 
 #welcome-div, #social-div {
@@ -28,7 +33,6 @@
 
 #welcome-text {
     margin-top: 20px;
-    font-size: 1.25em;
 }
 
 #social-div>.fa:hover, #social-div>.fab:hover {

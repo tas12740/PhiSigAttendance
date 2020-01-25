@@ -150,3 +150,9 @@ p, #footer>div>a {
     margin-right: 10px;
     margin-top: 10px;
 }
+
+.main-div {
+    margin-left: 10%;
+    margin-right: 10%;
+    border-top: 1px solid rgb(23, 98, 118);
+}

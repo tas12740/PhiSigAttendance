@@ -1,0 +1,27 @@
+{% extends 'root/base.html' %}
+
+{% block head %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'recruitment/css/schedule.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="main-div">
+    <h1>Schedule</h1>
+
+    <p>
+        You can find our Spring 2020 recruitment schedule below! If you have any conflicts, please let the recruitment
+        co-chairs, Callie and Fran, know beforehand! All of our Open Recruitment events are posted with more detailed
+        descriptions <a target="_blank" rel="noopener noreferrer"
+            href="https://heellife.unc.edu/organization/phisigpi">on Heellife</a>.
+    </p>
+
+    <p>
+        See the "<a href="/recruitment/requirements/">Eligibility and Requirements</a>" section for more detailed
+        requirements. Feel free to contact Recruitment with any questions at <a target="_blank"
+            rel="noopener noreferrer" href="mailto:pspakrecruitment@gmail.com">pspsakrecruitment@gmail.com</a>!
+    </p>
+
+    <img id="schedule" src="{% static 'recruitment/img/schedulespr20.png' %}">
+</div>
+{% endblock %}

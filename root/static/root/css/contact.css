@@ -1,0 +1,14 @@
+.italics {
+    font-style: italic;
+}
+
+.main-div p>a {
+    font-family: mont;
+    color: white;
+    text-decoration: underline;
+}
+
+.main-div p>a:hover {
+    font-weight: bold;
+    color: white;
+}

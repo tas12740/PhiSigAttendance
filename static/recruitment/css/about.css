@@ -2,13 +2,13 @@
     margin-bottom: 20px;
 }
 
-#about-recruitment>p>a {
+#about-recruitment a {
     font-family: mont;
     color: white;
     text-decoration: underline;
 }
 
-#about-recruitment>p>a:hover {
+#about-recruitment a:hover {
     font-weight: bold;
 }
 
@@ -23,4 +23,8 @@ iframe {
 #asterisk {
     margin-top: 50px;
     font-style: italic;
+}
+
+#how-to {
+    margin-top: 50px;
 }

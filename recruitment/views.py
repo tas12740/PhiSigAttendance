@@ -26,3 +26,11 @@ def about(request):
 
 def requirements(request):
     return render(request, 'recruitment/requirements.html')
+
+
+def schedule(request):
+    return render(request, 'recruitment/schedule.html')
+
+
+def forms(request):
+    return render(request, 'recruitment/forms.html')

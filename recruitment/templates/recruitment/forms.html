@@ -1,0 +1,23 @@
+{% extends 'root/base.html' %}
+
+{% block head %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'recruitment/css/forms.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="main-div">
+    <h1>Forms</h1>
+    <a class="butt" href="{% static 'recruitment/forms/Recruitment Packet Spring 2020.pdf' %}" download>Recruitment
+        Packet</a>
+
+    <a class="butt" href="" download>Open Recruitment Fact Sheet</a>
+    <p>
+        The Open Recruitment Fact Sheet must be filled out and sent to <a target="_blank" rel="noopener noreferrer"
+            href="mailto:pspakrecruitment@gmail.com">pspakrecruitment@gmail.com</a> by 1 PM on Friday,
+        February 7th. These questions enable PSP Siblings to get to know you better and enables you to tell us things we
+        didn’t learn during the Open Recruitment process. Please keep your answers to less than 200 words and rename
+        the file with your first and last name when you save it.
+    </p>
+</div>
+{% endblock %}

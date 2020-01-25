@@ -1,0 +1,30 @@
+@media only screen and (max-width: 1000px) {
+    #schedule {
+        min-width: 100%;
+        max-width: 100%;
+    }
+}
+
+@media only screen and (min-width: 1001px) {
+    #schedule {
+        min-width: 75%;
+        max-width: 75%;
+    }
+}
+
+#schedule {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.main-div a {
+    font-family: mont;
+    color: white;
+    text-decoration: underline;
+}
+
+.main-div a:hover {
+    font-weight: bold;
+    color: white;
+}

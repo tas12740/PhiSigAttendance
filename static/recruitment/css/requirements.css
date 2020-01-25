@@ -1,0 +1,10 @@
+.main-div a {
+    font-family: mont;
+    color: white;
+    text-decoration: underline;
+}
+
+.main-div a:hover {
+    font-weight: bold;
+    color: white;
+}

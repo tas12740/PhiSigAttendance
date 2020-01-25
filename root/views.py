@@ -8,3 +8,6 @@ def index(request):
 
 def aboutus(request):
     return render(request, 'root/aboutus.html')
+
+def contact(request):
+    return render(request, 'root/contact.html')

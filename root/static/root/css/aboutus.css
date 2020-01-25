@@ -1,0 +1,16 @@
+@media only screen and (max-width: 1000px) {
+    .list {
+        font-size: 3em;
+    }
+}
+
+.list {
+    font-family: mont;
+    color: white;
+}
+
+#about-div {
+    margin-left: 10%;
+    margin-right: 10%;
+    border-top: 1px solid rgb(23, 98, 118);
+}

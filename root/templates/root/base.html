@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    {% load static %}
+    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'checkin/favicon/apple-touch-icon.png' %}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'checkin/favicon/favicon-32x32.png' %}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'checkin/favicon/favicon-16x16.png' %}">
+    <link rel="manifest" href="{% static 'checkin/favicon/site.webmanifest' %}">
+    <link rel="mask-icon" href="{% static 'checkin/favicon/safari-pinned-tab.svg' %}" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+
+    <script src="{%  static 'checkin/vendor/js/jquery-3.4.1.js' %}"></script>
+    <script src="{% static 'checkin/vendor/js/popper.min.js' %}"></script>
+    <script src="{% static 'checkin/vendor/js/jquery-ui.js' %}"></script>
+    <script src="{% static 'checkin/vendor/js/bootstrap.js' %}"></script>
+    <script src="{% static 'checkin/vendor/js/bootstrap-select.js' %}"></script>
+
+    <link rel="stylesheet" type="text/css" href="{% static 'checkin/vendor/css/bootstrap.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'checkin/vendor/css/jquery-ui.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'checkin/vendor/css/jquery-ui.structure.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'checkin/vendor/css/jquery-ui.theme.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'checkin/vendor/css/bootstrap-grid.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'checkin/vendor/css/bootstrap-reboot.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'checkin/vendor/css/bootstrap-select.css' %}">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
+
+    <link rel="stylesheet" type="text/css" href="{% static 'root/css/base.css' %}">
+    {% block head %}
+    {% endblock %}
+</head>
+
+<body>
+    <img id="banner" src="{% static 'root/img/banner4.png' %}" alt="PSP-AK Banner">
+
+    <nav class="navbar navbar-expand-lg navbar-custom">
+        <button id="toggle" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarExtra"
+            aria-controls="navbarExtra" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon">
+                <i class="fas fa-bars"></i>
+            </span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarExtra">
+            <ul class="navbar-nav mx-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/" id="home" role="button">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/aboutus" id="home" role="button">About Us</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="recruitmentDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Recruitment
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="recruitmentDropdown">
+                        <a class="dropdown-item" href="/recruitment/about/">About Recruitment</a>
+                        <a class="dropdown-item" href="/recruitment/requirements/">Eligibility & Requirements</a>
+                        <a class="dropdown-item" href="/recruitment/schedule/">Recruitment Schedule</a>
+                        <a class="dropdown-item" href="/recruitment/forms/">Recruitment Forms</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" id="home" role="button">Contact Us</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="forSiblingsDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        For Siblings
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="forSiblingsDropdown">
+                        <a class="dropdown-item" href="/checkin/">Check In</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    {% block content %}
+    {% endblock %}
+    <div id="footer">
+        <div id="contact-div">
+            <h3>Alpha Kappa</h3>
+            <p>University of North Carolina at Chapel Hill</p>
+            <h4>PO Box</h4>
+            <p>Phi Sigma Pi National Honor Fraternity, Box 187, Frank Porter Graham Student Union, UNC-CH Campus
+                Box 5210, Chapel Hill, NC, 27599-5210</p>
+            <h4>Email Us</h4>
+            <a target="_blank" rel="noopener noreferrer" href="mailto:pspakleadership@gmail.com">PSP AK Leadership</a>
+            <a target="_blank" rel="noopener noreferrer" href="mailto:pspakrecruitment@gmail.com">PSP AK Recruitment</a>
+        </div>
+        <div id="connect-div">
+            <h3>Connect With Phi Sig</h3>
+            <div id="social-footer">
+                <a target="_blank" href="https://www.facebook.com/phisigmapiunc/" rel="noopener noreferrer"
+                    class="fab fa-facebook"></a>
+                <a target="_blank" href="https://twitter.com/PhiSigUNC" rel="noopener noreferrer"
+                    class="fab fa-twitter"></a>
+                <a target="_blank" href="https://www.instagram.com/phisigmapiunc/" rel="noopener noreferrer"
+                    class="fab fa-instagram"></a>
+                <a target="_blank" href="https://heellife.unc.edu/organization/phisigpi" rel="noopener noreferrer"
+                    class="fa fa-university"></a>
+            </div>
+        </div>
+    </div>
+    <img src="{% static 'checkin/img/spinner.gif' %}" id="loader" alt="Loader..." style="display:none;">
+</body>
+
+</html>

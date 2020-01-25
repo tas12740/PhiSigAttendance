@@ -1,0 +1,29 @@
+#about-recruitment {
+    border-top: 1px solid rgb(23, 98, 118);
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-bottom: 20px;
+}
+
+#about-recruitment>p>a {
+    font-family: mont;
+    color: white;
+    text-decoration: underline;
+}
+
+#about-recruitment>p>a:hover {
+    font-weight: bold;
+}
+
+iframe {
+    display: block;
+    margin-top: 40px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 40px;
+}
+
+#asterisk {
+    margin-top: 50px;
+    font-style: italic;
+}

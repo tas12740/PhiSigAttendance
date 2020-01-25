@@ -18,3 +18,11 @@ def emails(request):
         emails.append(new_pnm.email)
 
     return HttpResponse(','.join(emails))
+
+
+def about(request):
+    return render(request, 'recruitment/about.html')
+
+
+def requirements(request):
+    return render(request, 'recruitment/requirements.html')

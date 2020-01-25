@@ -1,0 +1,39 @@
+{% extends 'root/base.html' %}
+
+{% block head %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'root/css/aboutus.css' %}">
+{% endblock %}
+
+{% block content %}
+<div id="about-div">
+    <h1>About Us</h1>
+    <p>
+        <b>Alpha Kappa Chapter</b> (founded 11 November 1990) is located at the University of North Carolina at Chapel Hill.
+        The
+        chapter was founded by Mark Pabst, an Alumnus of Tau Chapter, located at East Carolina University, and is a
+        member
+        of the Mid Atlantic Region, one of Phi Sigma Pi’s eight collegiate regions.
+    </p>
+    <p>
+        Phi Sigma Pi National Honor Fraternity is a gender-inclusive fraternity open to undergraduate students attending
+        four-year colleges and universities throughout the United States. Our purpose is to bring together some of the
+        brightest
+        and most motivated students on campus and work together in a spirit of excellence to encourage three ideals:
+    </p>
+    <ul>
+        <li class="list">The acquisition and dissemination of information, knowledge, and skills through <b>scholarship.</b>
+        </li>
+        <li class="list">The application of professional skills and the fostering of <b>leadership</b> qualities by promoting
+            and advancing the
+            welfare of humanity.</li>
+        <li class="list">The fostering of intentional, inclusive fraternal <b>fellowship</b> within our ranks.</li>
+    </ul>
+    <p>
+        Collectively, these three ideals are known as <b>the Tripod</b> of Phi Sigma Pi. Joining Phi Sigma Pi is the first step
+        in
+        a lifelong journey of increased awareness, improved capabilities, greater opportunities, and a network of
+        friendships.
+    </p>
+</div>
+{% endblock %}

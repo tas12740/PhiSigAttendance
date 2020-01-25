@@ -5,3 +5,6 @@ from django.shortcuts import render
 
 def index(request):
     return render(request, 'root/index.html')
+
+def aboutus(request):
+    return render(request, 'root/aboutus.html')

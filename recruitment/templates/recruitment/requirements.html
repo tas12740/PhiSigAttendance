@@ -1,0 +1,32 @@
+{% extends 'root/base.html' %}
+
+{% block head %}
+{% load static %}
+<style>
+    #req-div {
+        border-top: 1px solid rgb(23, 98, 118);
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div id="req-div">
+    <h1>Requirements & Eligibility</h1>
+
+    <h2>Eligibility</h2>
+
+    <p>
+        Recruitment is open to 2<sup>nd</sup>-semester First Year students through 2<sup>nd</sup>-semester Juniors with
+        an <b>unrounded UNC GPA of 3.0</b> or higher.
+    </p>
+
+    <p>
+        Recruitment is also open to transfer students with at least one semester of UNC-CH coursework with an
+        <b>unrounded 3.0</b> GPA or higher.
+    </p>
+
+    <h2>Requirements</h2>
+</div>
+{% endblock %}

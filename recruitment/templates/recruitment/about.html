@@ -1,0 +1,66 @@
+{% extends 'root/base.html' %}
+
+{% block head %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'recruitment/css/about.css' %}">
+{% endblock %}
+
+{% block content %}
+<div id="about-recruitment">
+    <h1>About Recruitment</h1>
+    <p>
+        We're happy to see you're interested in joining the PSP family! Recruitment is a two-week-long process that
+        gives you the opportunity to learn more about the fraternity and us a chance to get to know you. The activities
+        are designed to introduce the valuees of the fraternity to Potential New Members (PNMs). Check out the following
+        video to see what we're all about!
+    </p>
+
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/6mSM4qCc6PQ" frameborder="0"
+        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+    <h2>Recruitment: The Process*</h2>
+
+    <p><b>Open Recruitment</b></p>
+
+    <p>
+        The first week of Recruitment is “open,” meaning that everyone who meets the eligibility requirements may attend
+        any (and all) of the scheduled events! By attending these fun events, you will get to know the Siblings and
+        other PNMs and help the Siblings get to know you! These events will help us determine whether or not to invite
+        you back for the second week of recruitment, Closed Recruitment.
+    </p>
+
+    <p>
+        To be eligible to be invited back for Closed, you will need to attend three out of the four events during Open
+        Recruitment, one of which <b>must</b> be the Friday event. You will also need to complete the Open Recruitment
+        Fact Sheet that will be emailed to you (or which can be found under "Recruitment Forms").
+    </p>
+
+    <p>
+        We understand that you may have some scheduling conflicts, so if you cannot meet one of the requirements, please
+        notify our Recrutiment Chairs, Callie and Francisco, as soon as possible at <a target="_blank"
+            rel="noopener noreferrer" href="mailto:pspakrecruitment@gmail.com">pspakrecruitment@gmail.com</a>.
+    </p>
+
+    <p><b>Closed Recruitment</b></p>
+
+    <p>
+        After Open Recruitment, we will notify and invite back the applicants that we feel may be the best fit for Phi
+        Sigma Pi. Only those notified by the Recruitment Chairs are invited to attend the events of Closed Recruitment,
+        and it is from these Potential New Members that the next class of Phi Sigma Pi Initiates will be chosen.
+    </p>
+
+    <p>
+        During the week of Closed Recruitment, it is required that you attend three out of the four events, one of which
+        <b>must</b> be the Friday event. Dress for the Friday event is business casual (think "class presentation"
+        dresscode). Again, if you know you will have a scheduling conflict, please notify the Recruitment chairs, Callie
+        and Francisco, before the event.
+    </p>
+
+    <p id="asterisk">
+        *For more detailed recruitment information, please check out our Spring 2020 recruitment packet, found <a
+            href="{% static 'recruitment/forms/Recruitment Packet Spring 2020.pdf' %}" download>here</a>
+        or under <a target="_blank" rel="noopener noreferrer" href="/recruitment/forms/">"Recruitment Forms"</a>!
+    </p>
+</div>
+
+{% endblock %}

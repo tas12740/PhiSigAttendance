@@ -8,20 +8,16 @@
         height: 120px;
         line-height: 120px;
     }
-    .carousel-item>img {
-        min-height: 25vh;
-        max-height: 25vh;
-    }
 }
 
 @media only screen and (min-width: 1001px) {
     #welcome-text {
         font-size: 1.25em;
     }
-    .carousel-item>img {
-        min-height: 75vh;
-        max-height: 75vh;
-    }
+}
+
+.carousel-img {
+    width: 100vh;
 }
 
 #welcome-div, #social-div {

@@ -3,7 +3,85 @@
 {% block head %}
 {% load static %}
 <style>
+    .contact-card {
+        width: 100%;
+        border-radius: 10px;
+        border: 10px solid rgb(23, 98, 118);
+        margin-bottom: 10px;
+    }
 
+    .contact-card-header {
+        display: table;
+        background-color: rgb(23, 98, 118);
+        width: 100%;
+    }
+
+    .contact-card-header>div {
+        display: table-cell;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+
+    .img-section {
+        width: 24%;
+    }
+
+    .img-section>img {
+        display: block;
+        border-radius: 50%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .img-section>img:not(.multiple) {
+        width: 150px;
+        height: 150px;
+    }
+
+    .img-section>img.multiple {
+        width: 75px;
+        height: 75px;
+    }
+
+    .header-text {
+        padding-left: 20px;
+        vertical-align: middle;
+        width: 75%;
+    }
+
+    .header-text>h1 {
+        font-size: 4em;
+    }
+
+    .contact-card-content {
+        padding: 20px;
+        display: table;
+        background-color: white;
+        width: 100%;
+        border-radius: 5px;
+    }
+
+    .card-row {
+        display: table-row;
+        width: 100%;
+    }
+
+    .card-row>* {
+        display: table-cell;
+        color: rgb(23, 98, 118);
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+
+    .card-row>h3 {
+        width: 25%;
+        border-right: 2.5px dashed rgb(23, 98, 118);
+    }
+
+    .card-row>p {
+        width: 75%;
+        padding-left: 10px;
+    }
 </style>
 <link rel="stylesheet" type="text/css" href="{% static 'root/css/contact.css' %}">
 {% endblock %}
@@ -26,5 +104,571 @@
 
     <p>ICR Chair (Yelly Gomes): <a target="_blank" rel="noopener noreferrer"
             href="mailto:ygomes27@live.unc.edu">ygomes27@live.unc.edu</a></p>
+
+    <h2>Executive Board</h2>
+
+    <div class="contact-card">
+        <div class="contact-card-header">
+            <div class="img-section">
+                <img src="{% static 'root/img/exec/maris.jpg' %}">
+            </div>
+            <div class="header-text">
+                <h1>President</h1>
+            </div>
+        </div>
+        <div class="contact-card-content">
+            <div class="card-row">
+                <h3>Name</h3>
+                <p>Maris Thomson</p>
+            </div>
+            <div class="card-row">
+                <h3>Description</h3>
+                <p>Lorem ipsum dolor est</p>
+            </div>
+            <div class="card-row">
+                <h3>Biography</h3>
+                <p>Lorem ipsum dolor est</p>
+            </div>
+            <div class="card-row">
+                <h3>Contact</h3>
+                <p>Lorem ipsum dolor est</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="contact-card">
+        <div class="contact-card-header">
+            <div class="img-section">
+                <img src="{% static 'root/img/exec/isabel.jfif' %}">
+            </div>
+            <div class="header-text">
+                <h1>Vice President</h1>
+            </div>
+        </div>
+        <div class="contact-card-content">
+            <div class="card-row">
+                <h3>Name</h3>
+                <p>Isabel Ghica</p>
+            </div>
+            <div class="card-row">
+                <h3>Description</h3>
+                <p>Lorem ipsum dolor est</p>
+            </div>
+            <div class="card-row">
+                <h3>Biography</h3>
+                <p>Lorem ipsum dolor est</p>
+            </div>
+            <div class="card-row">
+                <h3>Contact</h3>
+                <p>Lorem ipsum dolor est</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="contact-card">
+        <div class="contact-card-header">
+            <div class="img-section">
+                <img src="{% static 'root/img/exec/taylor.png' %}">
+            </div>
+            <div class="header-text">
+                <h1>Parliamentarian</h1>
+            </div>
+        </div>
+        <div class="contact-card-content">
+            <div class="card-row">
+                <h3>Name</h3>
+                <p>Taylor Smith</p>
+            </div>
+            <div class="card-row">
+                <h3>Description</h3>
+                <p>Lorem ipsum dolor est</p>
+            </div>
+            <div class="card-row">
+                <h3>Biography</h3>
+                <p>Lorem ipsum dolor est</p>
+            </div>
+            <div class="card-row">
+                <h3>Contact</h3>
+                <p>Lorem ipsum dolor est</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="contact-card">
+        <div class="contact-card-header">
+            <div class="img-section">
+                <img src="{% static 'root/img/exec/justin.jpg' %}">
+            </div>
+            <div class="header-text">
+                <h1>Treasurer</h1>
+            </div>
+        </div>
+        <div class="contact-card-content">
+            <div class="card-row">
+                <h3>Name</h3>
+                <p>Justin Do</p>
+            </div>
+            <div class="card-row">
+                <h3>Description</h3>
+                <p>Lorem ipsum dolor est</p>
+            </div>
+            <div class="card-row">
+                <h3>Biography</h3>
+                <p>Lorem ipsum dolor est</p>
+            </div>
+            <div class="card-row">
+                <h3>Contact</h3>
+                <p>Lorem ipsum dolor est</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="contact-card">
+        <div class="contact-card-header">
+            <div class="img-section">
+                <img src="{% static 'root/img/exec/leah.jfif' %}">
+            </div>
+            <div class="header-text">
+                <h1>Recording Secretary</h1>
+            </div>
+        </div>
+        <div class="contact-card-content">
+            <div class="card-row">
+                <h3>Name</h3>
+                <p>Leah Idichandy</p>
+            </div>
+            <div class="card-row">
+                <h3>Description</h3>
+                <p>Lorem ipsum dolor est</p>
+            </div>
+            <div class="card-row">
+                <h3>Biography</h3>
+                <p>Lorem ipsum dolor est</p>
+            </div>
+            <div class="card-row">
+                <h3>Contact</h3>
+                <p>Lorem ipsum dolor est</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="contact-card">
+        <div class="contact-card-header">
+            <div class="img-section">
+                <img src="{% static 'root/img/exec/justis.jpg' %}">
+            </div>
+            <div class="header-text">
+                <h1>Corresponding Secretary</h1>
+            </div>
+        </div>
+        <div class="contact-card-content">
+            <div class="card-row">
+                <h3>Name</h3>
+                <p>Justis Mitchell</p>
+            </div>
+            <div class="card-row">
+                <h3>Description</h3>
+                <p>Lorem ipsum dolor est</p>
+            </div>
+            <div class="card-row">
+                <h3>Biography</h3>
+                <p>Lorem ipsum dolor est</p>
+            </div>
+            <div class="card-row">
+                <h3>Contact</h3>
+                <p>Lorem ipsum dolor est</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="contact-card">
+        <div class="contact-card-header">
+            <div class="img-section">
+                <img src="{% static 'root/img/exec/olivia.png' %}">
+            </div>
+            <div class="header-text">
+                <h1>Historian</h1>
+            </div>
+        </div>
+        <div class="contact-card-content">
+            <div class="card-row">
+                <h3>Name</h3>
+                <p>Olivia Burston</p>
+            </div>
+            <div class="card-row">
+                <h3>Description</h3>
+                <p>Lorem ipsum dolor est</p>
+            </div>
+            <div class="card-row">
+                <h3>Biography</h3>
+                <p>Lorem ipsum dolor est</p>
+            </div>
+            <div class="card-row">
+                <h3>Contact</h3>
+                <p>Lorem ipsum dolor est</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="contact-card">
+        <div class="contact-card-header">
+            <div class="img-section">
+                <img class="multi" src="{% static 'root/img/exec/libby.png' %}">
+                <img class="multi" src="{% static 'root/img/exec/sarah.jfif' %}">
+            </div>
+            <div class="header-text">
+                <h1>Initiate Advisors</h1>
+            </div>
+        </div>
+        <div class="contact-card-content">
+            <div class="card-row">
+                <h3>Names</h3>
+                <p>Libby Lang, Sarah Stephens</p>
+            </div>
+            <div class="card-row">
+                <h3>Description</h3>
+                <p>Lorem ipsum dolor est</p>
+            </div>
+            <div class="card-row">
+                <h3>Biography</h3>
+                <p>Lorem ipsum dolor est</p>
+            </div>
+            <div class="card-row">
+                <h3>Contact</h3>
+                <p>Lorem ipsum dolor est</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="contact-card">
+        <div class="contact-card-header">
+            <div class="img-section">
+                <img class="multi" src="{% static 'root/img/exec/yelly.jpg' %}">
+                <img class="multi" src="{% static 'root/img/exec/elizabeth.png' %}">
+            </div>
+            <div class="header-text">
+                <h1>Mediators</h1>
+            </div>
+        </div>
+        <div class="contact-card-content">
+            <div class="card-row">
+                <h3>Names</h3>
+                <p>Yelly Gomes, Elizabeth Wilson</p>
+            </div>
+            <div class="card-row">
+                <h3>Description</h3>
+                <p>Lorem ipsum dolor est</p>
+            </div>
+            <div class="card-row">
+                <h3>Biography</h3>
+                <p>Lorem ipsum dolor est</p>
+            </div>
+            <div class="card-row">
+                <h3>Contact</h3>
+                <p>Lorem ipsum dolor est</p>
+            </div>
+        </div>
+    </div>
+
+    <h1>Committee Chairs</h1>
+
+    <!-- Scholarship, Fellowship, PR, Service, Recruitment, Alumni, IT, IM/Rec, IP, Standards -->
+    <div class="contact-card">
+        <div class="contact-card-header">
+            <div class="img-section">
+                <img class="multi" src="{% static 'root/img/chairs/melfi.jpg' %}">
+                <img class="multi" src="{% static 'root/img/chairs/megan.jfif' %}">
+            </div>
+            <div class="header-text">
+                <h1>Scholarship</h1>
+            </div>
+        </div>
+        <div class="contact-card-content">
+            <div class="card-row">
+                <h3>Names</h3>
+                <p>Elliot Melfi, Megan Ragusa</p>
+            </div>
+            <div class="card-row">
+                <h3>Description</h3>
+                <p>Lorem ipsum dolor est</p>
+            </div>
+            <div class="card-row">
+                <h3>Biography</h3>
+                <p>Lorem ipsum dolor est</p>
+            </div>
+            <div class="card-row">
+                <h3>Contact</h3>
+                <p>Lorem ipsum dolor est</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="contact-card">
+        <div class="contact-card-header">
+            <div class="img-section">
+                <img class="multi" src="{% static 'root/img/chairs/abby.jpg' %}">
+                <img class="multi" src="{% static 'root/img/chairs/megan.jfif' %}">
+            </div>
+            <div class="header-text">
+                <h1>Fellowship</h1>
+            </div>
+        </div>
+        <div class="contact-card-content">
+            <div class="card-row">
+                <h3>Names</h3>
+                <p>Abby Carey-Ewend, Megan Ragusa</p>
+            </div>
+            <div class="card-row">
+                <h3>Description</h3>
+                <p>Lorem ipsum dolor est</p>
+            </div>
+            <div class="card-row">
+                <h3>Biography</h3>
+                <p>Lorem ipsum dolor est</p>
+            </div>
+            <div class="card-row">
+                <h3>Contact</h3>
+                <p>Lorem ipsum dolor est</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="contact-card">
+        <div class="contact-card-header">
+            <div class="img-section">
+                <img class="multi" src="{% static 'root/img/chairs/natalie.jfif' %}">
+                <img class="multi" src="{% static 'root/img/chairs/alley.jfif' %}">
+            </div>
+            <div class="header-text">
+                <h1>PR</h1>
+            </div>
+        </div>
+        <div class="contact-card-content">
+            <div class="card-row">
+                <h3>Names</h3>
+                <p>Natalie Rinehard, Alley Steele</p>
+            </div>
+            <div class="card-row">
+                <h3>Description</h3>
+                <p>Lorem ipsum dolor est</p>
+            </div>
+            <div class="card-row">
+                <h3>Biography</h3>
+                <p>Lorem ipsum dolor est</p>
+            </div>
+            <div class="card-row">
+                <h3>Contact</h3>
+                <p>Lorem ipsum dolor est</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="contact-card">
+        <div class="contact-card-header">
+            <div class="img-section">
+                <img class="multi" src="{% static 'root/img/chairs/pmoney.jpg' %}">
+                <img class="multi" src="{% static 'root/img/chairs/anne.jpg' %}">
+            </div>
+            <div class="header-text">
+                <h1>Service</h1>
+            </div>
+        </div>
+        <div class="contact-card-content">
+            <div class="card-row">
+                <h3>Names</h3>
+                <p>Pranesh Gayam, Anne Majerus</p>
+            </div>
+            <div class="card-row">
+                <h3>Description</h3>
+                <p>Lorem ipsum dolor est</p>
+            </div>
+            <div class="card-row">
+                <h3>Biography</h3>
+                <p>Lorem ipsum dolor est</p>
+            </div>
+            <div class="card-row">
+                <h3>Contact</h3>
+                <p>Lorem ipsum dolor est</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="contact-card">
+        <div class="contact-card-header">
+            <div class="img-section">
+                <img class="multi" src="{% static 'root/img/chairs/fran.jfif' %}">
+                <img class="multi" src="{% static 'root/img/chairs/callie.jfif' %}">
+            </div>
+            <div class="header-text">
+                <h1>Recruitment</h1>
+            </div>
+        </div>
+        <div class="contact-card-content">
+            <div class="card-row">
+                <h3>Names</h3>
+                <p>Francisco Cantu, Callie Kirchstein</p>
+            </div>
+            <div class="card-row">
+                <h3>Description</h3>
+                <p>Lorem ipsum dolor est</p>
+            </div>
+            <div class="card-row">
+                <h3>Biography</h3>
+                <p>Lorem ipsum dolor est</p>
+            </div>
+            <div class="card-row">
+                <h3>Contact</h3>
+                <p>Lorem ipsum dolor est</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="contact-card">
+        <div class="contact-card-header">
+            <div class="img-section">
+                <img class="multi" src="{% static 'root/img/chairs/fran.jfif' %}">
+                <img class="multi" src="{% static 'root/img/exec/justis.jpg' %}">
+            </div>
+            <div class="header-text">
+                <h1>Alumni</h1>
+            </div>
+        </div>
+        <div class="contact-card-content">
+            <div class="card-row">
+                <h3>Names</h3>
+                <p>Francisco Cantu, Justis Mitchell</p>
+            </div>
+            <div class="card-row">
+                <h3>Description</h3>
+                <p>Lorem ipsum dolor est</p>
+            </div>
+            <div class="card-row">
+                <h3>Biography</h3>
+                <p>Lorem ipsum dolor est</p>
+            </div>
+            <div class="card-row">
+                <h3>Contact</h3>
+                <p>Lorem ipsum dolor est</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="contact-card">
+        <div class="contact-card-header">
+            <div class="img-section">
+                <img class="multi" src="{% static 'root/img/exec/justin.jpg' %}">
+                <img class="multi" src="{% static 'root/img/exec/taylor.png' %}">
+            </div>
+            <div class="header-text">
+                <h1>IT</h1>
+            </div>
+        </div>
+        <div class="contact-card-content">
+            <div class="card-row">
+                <h3>Names</h3>
+                <p>Justin Do, Taylor Smith</p>
+            </div>
+            <div class="card-row">
+                <h3>Description</h3>
+                <p>Lorem ipsum dolor est</p>
+            </div>
+            <div class="card-row">
+                <h3>Biography</h3>
+                <p>Lorem ipsum dolor est</p>
+            </div>
+            <div class="card-row">
+                <h3>Contact</h3>
+                <p>Lorem ipsum dolor est</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="contact-card">
+        <div class="contact-card-header">
+            <div class="img-section">
+                <img class="multi" src="{% static 'root/img/chairs/alex.jpg' %}">
+                <img class="multi" src="{% static 'root/img/chairs/pmoney.jpg' %}">
+            </div>
+            <div class="header-text">
+                <h1>IM/Rec</h1>
+            </div>
+        </div>
+        <div class="contact-card-content">
+            <div class="card-row">
+                <h3>Names</h3>
+                <p>Alex Erling, Pranesh Gayam</p>
+            </div>
+            <div class="card-row">
+                <h3>Description</h3>
+                <p>Lorem ipsum dolor est</p>
+            </div>
+            <div class="card-row">
+                <h3>Biography</h3>
+                <p>Lorem ipsum dolor est</p>
+            </div>
+            <div class="card-row">
+                <h3>Contact</h3>
+                <p>Lorem ipsum dolor est</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="contact-card">
+        <div class="contact-card-header">
+            <div class="img-section">
+                <img src="{% static 'root/img/exec/maris.jpg' %}">
+            </div>
+            <div class="header-text">
+                <h1>Intentional Programming</h1>
+            </div>
+        </div>
+        <div class="contact-card-content">
+            <div class="card-row">
+                <h3>Names</h3>
+                <p>Maris Thomson</p>
+            </div>
+            <div class="card-row">
+                <h3>Description</h3>
+                <p>Lorem ipsum dolor est</p>
+            </div>
+            <div class="card-row">
+                <h3>Biography</h3>
+                <p>Lorem ipsum dolor est</p>
+            </div>
+            <div class="card-row">
+                <h3>Contact</h3>
+                <p>Lorem ipsum dolor est</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="contact-card">
+        <div class="contact-card-header">
+            <div class="img-section">
+                <img src="{% static 'root/img/chairs/adam.jfif' %}">
+            </div>
+            <div class="header-text">
+                <h1>Standards</h1>
+            </div>
+        </div>
+        <div class="contact-card-content">
+            <div class="card-row">
+                <h3>Names</h3>
+                <p>Adam Jordan</p>
+            </div>
+            <div class="card-row">
+                <h3>Description</h3>
+                <p>Lorem ipsum dolor est</p>
+            </div>
+            <div class="card-row">
+                <h3>Biography</h3>
+                <p>Lorem ipsum dolor est</p>
+            </div>
+            <div class="card-row">
+                <h3>Contact</h3>
+                <p>Lorem ipsum dolor est</p>
+            </div>
+        </div>
+    </div>
 </div>
 {% endblock %}

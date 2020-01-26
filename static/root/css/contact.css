@@ -12,3 +12,114 @@
     font-weight: bold;
     color: white;
 }
+
+@media only screen and (max-width: 1000px) {
+    .contact-card-content h3 {
+        font-size: 2.75em;
+    }
+    .contact-card-content p {
+        font-size: 2.5em;
+    }
+    .contact-card-header h1 {
+        font-size: 5em;
+    }
+}
+
+@media only screen and (min-width:1001px) {
+    .contact-card-header h1 {
+        font-size: 4em;
+    }
+}
+
+.contact-card {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.contact-card-header {
+    display: table;
+    background-color: rgb(23, 98, 118);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    width: 100%;
+}
+
+.contact-card-header>div {
+    display: table-cell;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.img-section {
+    width: 24%;
+}
+
+.img-section>img {
+    display: block;
+    border-radius: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    width: 150px;
+    height: 150px;
+}
+
+.img-section>img.multi:first-child {
+    margin-bottom: 10px;
+}
+
+.header-text {
+    padding-left: 20px;
+    vertical-align: middle;
+    width: 75%;
+}
+
+.contact-card-content {
+    padding: 20px;
+    display: table;
+    background-color: white;
+    width: 100%;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.card-row {
+    display: table-row;
+    width: 100%;
+}
+
+.card-row>* {
+    display: table-cell;
+    color: rgb(23, 98, 118);
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.card-row>h3, .card-row>div:first-child {
+    width: 25%;
+    border-right: 2.5px dashed rgb(23, 98, 118);
+    vertical-align: middle;
+}
+
+.card-row>p, .card-row>div:nth-child(2) {
+    width: 75%;
+    padding-left: 10px;
+    vertical-align: middle;
+}
+
+.card-row>*>p {
+    vertical-align: middle;
+}
+
+.contact-card-content>.card-row>div>p>a {
+    color: rgb(23, 98, 118);
+    vertical-align: middle;
+}
+
+.contact-card-content>.card-row>div>p>a:hover {
+    color: rgb(23, 98, 118);
+}
+
+h2 {
+    margin-top: 50px;
+}

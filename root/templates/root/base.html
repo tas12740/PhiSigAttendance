@@ -27,7 +27,7 @@
     <link rel="icon" type="image/png" sizes="96x96" href="{% static 'root/favicon/favicon-96x96.png' %}">
     <link rel="icon" type="image/png" sizes="16x16" href="{% static 'root/favicon/favicon-16x16.png' %}">
 
-    <meta name="msapplication-TileImage" content="{% static 'root/favicon/ms-icon-144x144.png' %}"> 
+    <meta name="msapplication-TileImage" content="{% static 'root/favicon/ms-icon-144x144.png' %}">
 
     <script src="{%  static 'root/vendor/js/jquery-3.4.1.js' %}"></script>
     <script src="{% static 'root/vendor/js/popper.min.js' %}"></script>
@@ -65,11 +65,19 @@
 
         <div class="collapse navbar-collapse" id="navbarExtra">
             <ul class="navbar-nav mx-auto">
-                <li class="nav-item">
+                <li id="first-nav-item" class="nav-item">
                     <a class="nav-link" href="/" id="home" role="button">Home</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/aboutus" id="home" role="button">About Us</a>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="aboutusDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        About Us
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="aboutusDropdown">
+                        <a class="dropdown-item" href="/aboutus/" role="button">About Us</a>
+                        <a class="dropdown-item" href="/documents/" role="button">Important Documents</a>
+                        <a class="dropdown-item" href="/committees/" role="button">Committees</a>
+                    </div>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="recruitmentDropdown" role="button"
@@ -86,13 +94,14 @@
                 <li class="nav-item">
                     <a class="nav-link" href="/contact/" id="home" role="button">Contact Us</a>
                 </li>
-                <li class="nav-item dropdown">
+                <li id="last-nav-item" class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="forSiblingsDropdown" role="button"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         For Siblings
                     </a>
                     <div class="dropdown-menu" aria-labelledby="forSiblingsDropdown">
                         <a class="dropdown-item" href="/root/">Check In</a>
+                        <a class="dropdown-item" href="/siblings/documents/" role="button">Documents</a>
                     </div>
                 </li>
             </ul>

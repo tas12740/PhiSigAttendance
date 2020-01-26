@@ -2,100 +2,6 @@
 
 {% block head %}
 {% load static %}
-<style>
-    @media only screen and (max-width: 1000px) {
-        .contact-card-content h3 {
-            font-size: 2.75em;
-        }
-
-        .contact-card-content p {
-            font-size: 2.5em;
-        }
-
-        .contact-card-header h1 {
-            font-size: 5em;
-        }
-    }
-
-    @media only screen and (min-width:1001px) {
-        .contact-card-header h1 {
-            font-size: 4em;
-        }
-    }
-
-    .contact-card {
-        width: 100%;
-        border-radius: 10px;
-        margin-bottom: 10px;
-    }
-
-    .contact-card-header {
-        display: table;
-        background-color: rgb(23, 98, 118);
-        border-top-left-radius: 10px;
-        border-top-right-radius: 10px;
-        width: 100%;
-    }
-
-    .contact-card-header>div {
-        display: table-cell;
-        padding-top: 10px;
-        padding-bottom: 10px;
-    }
-
-    .img-section {
-        width: 24%;
-    }
-
-    .img-section>img {
-        display: block;
-        border-radius: 50%;
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    .img-section>img {
-        width: 150px;
-        height: 150px;
-    }
-
-    .header-text {
-        padding-left: 20px;
-        vertical-align: middle;
-        width: 75%;
-    }
-
-    .contact-card-content {
-        padding: 20px;
-        display: table;
-        background-color: white;
-        width: 100%;
-        border-bottom-left-radius: 10px;
-        border-bottom-right-radius: 10px;
-    }
-
-    .card-row {
-        display: table-row;
-        width: 100%;
-    }
-
-    .card-row>* {
-        display: table-cell;
-        color: rgb(23, 98, 118);
-        padding-top: 10px;
-        padding-bottom: 10px;
-    }
-
-    .card-row>h3 {
-        width: 25%;
-        border-right: 2.5px dashed rgb(23, 98, 118);
-    }
-
-    .card-row>p {
-        width: 75%;
-        padding-left: 10px;
-    }
-</style>
 <link rel="stylesheet" type="text/css" href="{% static 'root/css/contact.css' %}">
 {% endblock %}
 
@@ -136,15 +42,16 @@
             </div>
             <div class="card-row">
                 <h3>Description</h3>
-                <p>Lorem ipsum dolor est</p>
-            </div>
-            <div class="card-row">
-                <h3>Biography</h3>
-                <p>Lorem ipsum dolor est</p>
+                <p>The President is the highest office of and official representative of the Alpha Kappa Chapter. They
+                    preside over all meetings of the Chapter and serve as the Risk Management Advisor.</p>
             </div>
             <div class="card-row">
                 <h3>Contact</h3>
-                <p>Lorem ipsum dolor est</p>
+                <div>
+                    <p><a target="_blank" rel="noopener noreferrer"
+                            href="mailto:pspakleadership@gmail.com">pspakleadership@gmail.com</a></p>
+                    <p><a target="_blank" rel="noopener noreferrer" href="mailto:maris@unc.edu">maris@unc.edu</a></p>
+                </div>
             </div>
         </div>
     </div>
@@ -165,15 +72,15 @@
             </div>
             <div class="card-row">
                 <h3>Description</h3>
-                <p>Lorem ipsum dolor est</p>
-            </div>
-            <div class="card-row">
-                <h3>Biography</h3>
-                <p>Lorem ipsum dolor est</p>
+                <p>The Vice President performs all duties of the President in their absence. They also oversee all Phi
+                    Sig's Committees and their chairs.</p>
             </div>
             <div class="card-row">
                 <h3>Contact</h3>
-                <p>Lorem ipsum dolor est</p>
+                <div>
+                    <p><a target="_blank" rel="noopener noreferrer"
+                            href="mailto:pspakleadership@gmail.com">pspakleadership@gmail.com</a></p>
+                </div>
             </div>
         </div>
     </div>
@@ -194,15 +101,20 @@
             </div>
             <div class="card-row">
                 <h3>Description</h3>
-                <p>Lorem ipsum dolor est</p>
-            </div>
-            <div class="card-row">
-                <h3>Biography</h3>
-                <p>Lorem ipsum dolor est</p>
+                <p>
+                    The Parliamentarian interprets the various laws and documents governing our chapter; they also
+                    maintain a localized version of Robert's Rules of Order and preside over the Chapter in the absence
+                    of the President and Vice President.
+                </p>
             </div>
             <div class="card-row">
                 <h3>Contact</h3>
-                <p>Lorem ipsum dolor est</p>
+                <div>
+                    <p><a target="_blank" rel="noopener noreferrer"
+                            href="mailto:pspakparliamentarian@gmail.com">pspakparliamentarian@gmail.com</a></p>
+                    <p><a target="_blank" rel="noopener noreferrer"
+                            href="mailto:tas127@live.unc.edu">tas127@live.unc.edu</a></p>
+                </div>
             </div>
         </div>
     </div>
@@ -223,15 +135,16 @@
             </div>
             <div class="card-row">
                 <h3>Description</h3>
-                <p>Lorem ipsum dolor est</p>
-            </div>
-            <div class="card-row">
-                <h3>Biography</h3>
-                <p>Lorem ipsum dolor est</p>
+                <p>The Treasurer presides over the Chapter's budget, including paying all debts and expenses and keeping
+                    accurate record of Fraternity accounts. They preside over meetings in the absence of the President,
+                    Vice President, and Paraliamentarian.</p>
             </div>
             <div class="card-row">
                 <h3>Contact</h3>
-                <p>Lorem ipsum dolor est</p>
+                <div>
+                    <p><a target="_blank" rel="noopener noreferrer"
+                            href="mailto:pspaktreasurer@gmail.com">pspaktreasurer@gmail.com</a></p>
+                </div>
             </div>
         </div>
     </div>
@@ -252,15 +165,18 @@
             </div>
             <div class="card-row">
                 <h3>Description</h3>
-                <p>Lorem ipsum dolor est</p>
-            </div>
-            <div class="card-row">
-                <h3>Biography</h3>
-                <p>Lorem ipsum dolor est</p>
+                <p>The Recording Secretary keeps a record of all Executive Board and Chapter meetings in the form of
+                    minutes and is responsible for attendance records.</p>
             </div>
             <div class="card-row">
                 <h3>Contact</h3>
-                <p>Lorem ipsum dolor est</p>
+                <div>
+                    <p>
+                        <a target="_blank" rel="noopener noreferrer" href="mailto:pspakrecords@gmail.com">
+                            pspakrecords@gmail.com
+                        </a>
+                    </p>
+                </div>
             </div>
         </div>
     </div>
@@ -281,15 +197,18 @@
             </div>
             <div class="card-row">
                 <h3>Description</h3>
-                <p>Lorem ipsum dolor est</p>
-            </div>
-            <div class="card-row">
-                <h3>Biography</h3>
-                <p>Lorem ipsum dolor est</p>
+                <p>The Corresponding Secretary is responsible for all correspondance pertaining to the Chapter and the
+                    National Organization and compiles and maintains all membership lists.</p>
             </div>
             <div class="card-row">
                 <h3>Contact</h3>
-                <p>Lorem ipsum dolor est</p>
+                <div>
+                    <p>
+                        <a target="_blank" rel="noopener noreferrer" href="mailto:pspakrecords@gmail.com">
+                            pspakrecords@gmail.com
+                        </a>
+                    </p>
+                </div>
             </div>
         </div>
     </div>
@@ -310,15 +229,18 @@
             </div>
             <div class="card-row">
                 <h3>Description</h3>
-                <p>Lorem ipsum dolor est</p>
-            </div>
-            <div class="card-row">
-                <h3>Biography</h3>
-                <p>Lorem ipsum dolor est</p>
+                <p>The Historian shall keep, preserve, and protect local Chapter history and correspond with the
+                    National Historian.</p>
             </div>
             <div class="card-row">
                 <h3>Contact</h3>
-                <p>Lorem ipsum dolor est</p>
+                <div>
+                    <p>
+                        <a target="_blank" rel="noopener noreferrer" href="">
+                            Lorem ipsum dolor est.
+                        </a>
+                    </p>
+                </div>
             </div>
         </div>
     </div>
@@ -340,15 +262,19 @@
             </div>
             <div class="card-row">
                 <h3>Description</h3>
-                <p>Lorem ipsum dolor est</p>
-            </div>
-            <div class="card-row">
-                <h3>Biography</h3>
-                <p>Lorem ipsum dolor est</p>
+                <p>The Initiate Advisors are responsible for the planninig and implementation of the Initiation Program,
+                    for reviewing and updating the Initiation Program, and ensuring that it follows all National and
+                    Chapter rules and regulations.</p>
             </div>
             <div class="card-row">
                 <h3>Contact</h3>
-                <p>Lorem ipsum dolor est</p>
+                <div>
+                    <p>
+                        <a target="_blank" rel="noopener noreferrer" href="mailto:pspteamia@gmail.com">
+                            pspteamia@gmail.com
+                        </a>
+                    </p>
+                </div>
             </div>
         </div>
     </div>
@@ -370,20 +296,23 @@
             </div>
             <div class="card-row">
                 <h3>Description</h3>
-                <p>Lorem ipsum dolor est</p>
-            </div>
-            <div class="card-row">
-                <h3>Biography</h3>
-                <p>Lorem ipsum dolor est</p>
+                <p>The Mediators mediate disputes between Siblings and Initiates, uphold the principles of Subrosa, and
+                    act as impartial representatives on the Executive Board.</p>
             </div>
             <div class="card-row">
                 <h3>Contact</h3>
-                <p>Lorem ipsum dolor est</p>
+                <div>
+                    <p>
+                        <a target="_blank" rel="noopener noreferrer" href="mailto:pspmediators@gmail.com">
+                            pspmediators@gmail.com
+                        </a>
+                    </p>
+                </div>
             </div>
         </div>
     </div>
 
-    <h1>Committee Chairs</h1>
+    <h2 id="committee-header">Committee Chairs</h2>
 
     <!-- Scholarship, Fellowship, PR, Service, Recruitment, Alumni, IT, IM/Rec, IP, Standards -->
     <div class="contact-card">
@@ -403,15 +332,18 @@
             </div>
             <div class="card-row">
                 <h3>Description</h3>
-                <p>Lorem ipsum dolor est</p>
-            </div>
-            <div class="card-row">
-                <h3>Biography</h3>
-                <p>Lorem ipsum dolor est</p>
+                <p>The Scholarship Committee plans and carries out all projects which will emphasize the academic and
+                    intellectual portion of the Tripod.</p>
             </div>
             <div class="card-row">
                 <h3>Contact</h3>
-                <p>Lorem ipsum dolor est</p>
+                <div>
+                    <p>
+                        <a target="_blank" rel="noopener noreferrer" href="mailto:squirrels4scholarship@gmail.com">
+                            squirrels4scholarship@gmail.com
+                        </a>
+                    </p>
+                </div>
             </div>
         </div>
     </div>
@@ -433,15 +365,18 @@
             </div>
             <div class="card-row">
                 <h3>Description</h3>
-                <p>Lorem ipsum dolor est</p>
-            </div>
-            <div class="card-row">
-                <h3>Biography</h3>
-                <p>Lorem ipsum dolor est</p>
+                <p>The Fellowship Committee plans all social functions for Alpha Kappa Chapter, including Semi-Formal,
+                    Mountain Weekend, and Formal.</p>
             </div>
             <div class="card-row">
                 <h3>Contact</h3>
-                <p>Lorem ipsum dolor est</p>
+                <div>
+                    <p>
+                        <a target="_blank" rel="noopener noreferrer" href="">
+                            Lorem ipsum dolor est.
+                        </a>
+                    </p>
+                </div>
             </div>
         </div>
     </div>
@@ -463,15 +398,18 @@
             </div>
             <div class="card-row">
                 <h3>Description</h3>
-                <p>Lorem ipsum dolor est</p>
-            </div>
-            <div class="card-row">
-                <h3>Biography</h3>
-                <p>Lorem ipsum dolor est</p>
+                <p>The Public Relations Committee promotes the ideals and activities of Alpha Kappa Chapter to the
+                    community at large, including by curating the Chapter's various social media pages.</p>
             </div>
             <div class="card-row">
                 <h3>Contact</h3>
-                <p>Lorem ipsum dolor est</p>
+                <div>
+                    <p>
+                        <a target="_blank" rel="noopener noreferrer" href="mailto:wearepralphakappa@gmail.com">
+                            wearepralphakappa@gmail.com
+                        </a>
+                    </p>
+                </div>
             </div>
         </div>
     </div>
@@ -493,15 +431,18 @@
             </div>
             <div class="card-row">
                 <h3>Description</h3>
-                <p>Lorem ipsum dolor est</p>
-            </div>
-            <div class="card-row">
-                <h3>Biography</h3>
-                <p>Lorem ipsum dolor est</p>
+                <p>The Service Committee plans service projects for the Alpha Kappa Chapter and community, including the
+                    annual Battle of the Bands and Special Olympicis.</p>
             </div>
             <div class="card-row">
                 <h3>Contact</h3>
-                <p>Lorem ipsum dolor est</p>
+                <div>
+                    <p>
+                        <a target="_blank" rel="noopener noreferrer" href="mailto:pspakservice@gmail.com">
+                            pspakservice@gmail.com
+                        </a>
+                    </p>
+                </div>
             </div>
         </div>
     </div>
@@ -523,15 +464,17 @@
             </div>
             <div class="card-row">
                 <h3>Description</h3>
-                <p>Lorem ipsum dolor est</p>
-            </div>
-            <div class="card-row">
-                <h3>Biography</h3>
-                <p>Lorem ipsum dolor est</p>
+                <p>The Recruitment Committee plans and implements the Recruitment Period and all events thereof.</p>
             </div>
             <div class="card-row">
                 <h3>Contact</h3>
-                <p>Lorem ipsum dolor est</p>
+                <div>
+                    <p>
+                        <a target="_blank" rel="noopener noreferrer" href="mailto:pspakrecruitment@gmail.com">
+                            pspakrecruitment@gmail.com
+                        </a>
+                    </p>
+                </div>
             </div>
         </div>
     </div>
@@ -553,15 +496,17 @@
             </div>
             <div class="card-row">
                 <h3>Description</h3>
-                <p>Lorem ipsum dolor est</p>
-            </div>
-            <div class="card-row">
-                <h3>Biography</h3>
-                <p>Lorem ipsum dolor est</p>
+                <p>The Alumni Committee maintains relations with Alpha Kappa Chapter alumni</p>
             </div>
             <div class="card-row">
                 <h3>Contact</h3>
-                <p>Lorem ipsum dolor est</p>
+                <div>
+                    <p>
+                        <a target="_blank" rel="noopener noreferrer" href="">
+                            Lorem ipsum dolor est.
+                        </a>
+                    </p>
+                </div>
             </div>
         </div>
     </div>
@@ -583,15 +528,19 @@
             </div>
             <div class="card-row">
                 <h3>Description</h3>
-                <p>Lorem ipsum dolor est</p>
-            </div>
-            <div class="card-row">
-                <h3>Biography</h3>
-                <p>Lorem ipsum dolor est</p>
+                <p>The IT Committee performs all duties relating to Alpha Kappa Chapter's technological infrastructure,
+                    including voting, maintaining and improving this website, and developing various other ancillary
+                    projects.</p>
             </div>
             <div class="card-row">
                 <h3>Contact</h3>
-                <p>Lorem ipsum dolor est</p>
+                <div>
+                    <p>
+                        <a target="_blank" rel="noopener noreferrer" href="mailto:phisiginfotech@gmail.com">
+                            phisiginfotech@gmail.com
+                        </a>
+                    </p>
+                </div>
             </div>
         </div>
     </div>
@@ -613,15 +562,20 @@
             </div>
             <div class="card-row">
                 <h3>Description</h3>
-                <p>Lorem ipsum dolor est</p>
-            </div>
-            <div class="card-row">
-                <h3>Biography</h3>
-                <p>Lorem ipsum dolor est</p>
+                <p>
+                    The IM/Rec Committee plans all recreational activities for Alpha Kappa Chapter, including organizing
+                    intramural teams, executing events like the Turkey Bowl, and implementing a workout buddy program.
+                </p>
             </div>
             <div class="card-row">
                 <h3>Contact</h3>
-                <p>Lorem ipsum dolor est</p>
+                <div>
+                    <p>
+                        <a target="_blank" rel="noopener noreferrer" href="">
+                            Lorem ipsum dolor est.
+                        </a>
+                    </p>
+                </div>
             </div>
         </div>
     </div>
@@ -642,15 +596,19 @@
             </div>
             <div class="card-row">
                 <h3>Description</h3>
-                <p>Lorem ipsum dolor est</p>
-            </div>
-            <div class="card-row">
-                <h3>Biography</h3>
-                <p>Lorem ipsum dolor est</p>
+                <p>
+                    The Intentional Programming Committee is responsible for upholding Alpha Kappa Chapter's commitment
+                    to inclusion and non-discrimination.</p>
             </div>
             <div class="card-row">
                 <h3>Contact</h3>
-                <p>Lorem ipsum dolor est</p>
+                <div>
+                    <p>
+                        <a target="_blank" rel="noopener noreferrer" href="">
+                            Lorem ipsum dolor est.
+                        </a>
+                    </p>
+                </div>
             </div>
         </div>
     </div>
@@ -671,11 +629,10 @@
             </div>
             <div class="card-row">
                 <h3>Description</h3>
-                <p>Lorem ipsum dolor est</p>
-            </div>
-            <div class="card-row">
-                <h3>Biography</h3>
-                <p>Lorem ipsum dolor est</p>
+                <p>
+                    The Standards Committee maintains the points of the House System and acts as the House System
+                    Coordinator.
+                </p>
             </div>
             <div class="card-row">
                 <h3>Contact</h3>

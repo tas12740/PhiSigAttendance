@@ -105,7 +105,15 @@
 
 .navbar-nav {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
+}
+
+#first-nav-item {
+    margin-right: auto;
+}
+
+#last-nav-item {
+    margin-left: auto;
 }
 
 .nav-item {

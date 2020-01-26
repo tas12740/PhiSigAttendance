@@ -104,24 +104,22 @@
 .card-row>p, .card-row>div:nth-child(2) {
     width: 75%;
     padding-left: 10px;
-    vertical-align: middle;
 }
 
-.card-row>*>p {
-    vertical-align: middle;
-}
-
-.contact-card-content>.card-row>div>p>a {
-    color: rgb(23, 98, 118);
-    vertical-align: middle;
-}
-
-.contact-card-content>.card-row>div>p>a:hover {
+.contact-card-content>.card-row>div>p>a, .contact-card-content>.card-row>div>p>a:hover {
     color: rgb(23, 98, 118);
 }
 
 h2 {
     margin-top: 50px;
+}
+
+.card-row>div {
+    vertical-align: middle;
+}
+
+.card-row>div>* {
+    display: inherit;
 }
 
 .card-row:last-child {

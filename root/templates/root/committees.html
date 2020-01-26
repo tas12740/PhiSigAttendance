@@ -1,0 +1,160 @@
+{% extends 'root/base.html' %}
+
+{% block head %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'root/css/committees.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="main-div">
+    <h1>Committees</h1>
+
+    <div id="about-committees">
+        <h3>About Committees</h3>
+
+        <p>
+            Committees are an essential part of the structure of Phi Sigma Pi. The Vice President leads the committee
+            system
+            and presides over committee Chairs. In order to foster the development of leadership and to facilitate the
+            running of our chapter, all siblings without leadership positions must serve on one of Alpha Kappa’s twelve
+            committees.
+        </p>
+        <p>
+            Each of the committees is led by one or two chairs, who are elected by the chapter each semester. The
+            committees
+            are given budgets which allow them the freedom to coordinate and make events such as Mountain Weekend,
+            skills
+            trainings, or Formal.
+        </p>
+        <p>
+            Siblings are not bound to a committee for their entire time in PSP; the system allows siblings the ability
+            to
+            try new things and pique new interests each semester.
+        </p>
+    </div>
+
+    <div id="committee-info">
+        <div class="committee">
+            <h3>Alumni Committee</h3>
+            <img src="{% static 'root/img/committees/alumni.jpeg' %}">
+            <p class="img">
+                Alumni Committee serves as a liaison between current members of PSP and siblings that have graduated.
+                Alumni
+                Committee makes sure that alumni stay well-informed of major events that occur in the Fraternity. It
+                establishes a link between generations so that alumni can still actively participate even when they have
+                graduated.
+            </p>
+            <p class="img">
+                Alumni Committee holds one big event every semester. In the fall, we host the Alumni Tailgate, which
+                usually
+                falls on Homecoming weekend, when many alumni will already be in Chapel Hill. In the spring, we host
+                the Senior Roast, which is a final farewell to all the senior Siblings.
+            </p>
+        </div>
+
+        <div class="committee">
+            <h3>Fellowship Committee</h3>
+            <img src="{% static 'root/img/committees/fellowship.jpeg' %}">
+            <p class="img">
+                Fellowship Committee organizes events that increase the Fellowship portion of the Tripod. Ranging from
+                semi-formals to movie nights to mixers, this committee focuses on increasing the bonds among Siblings.
+            </p>
+        </div>
+
+        <div class="committee">
+            <h3>Fundraising Committee</h3>
+            <p>
+                The Fundraising Committee works to both raise funds for the Fraternity and facilitate merchandise orders
+                for
+                Siblings. Examples of past fundraisers include Kendra Scott, Lotsa, and Benny Cappella's.
+            </p>
+            <p>
+                This Committee's mission is to raise money for the general activities and budgets of the fraternity as
+                well
+                as to provide opportunities for financial relief for siblings experiencing financial difficulties.
+                Fundraising is also actively working to lower the costs of merchandise and to make the fraternity more
+                financially accessible for all Siblings and Potential New Members.
+            </p>
+        </div>
+
+        <div class="committee">
+            <h3>Intentional Programming Committee</h3>
+            <img src="{% static 'root/img/committees/ip.jpg' %}">
+            <p class="img">
+                Intentional Programming (IP), is a committee focused on inclusivity and social awareness in PSP
+                programming. This semester, IP is looking forward to partnering with Scholarship committee to host HAVEN
+                training, participate in inherent biases assessments, and facilitate taking the Black and Blue Tour.
+            </p>
+        </div>
+
+        <div class="committee">
+            <h3>Intramural/Recreation Committee</h3>
+            <img src="{% static 'root/img/committees/imrec.jpg' %}">
+            <p class="img">
+                The IM/Rec committee focuses on facilitating fellowship between Siblings in PSP through athletics and
+                activity. Some of its responsibilities include arranging co-recreational IM teams, hiking trips, and
+                fantasy
+                football leagues.
+            </p>
+        </div>
+
+        <div class="committee">
+            <h3>IT Committee</h3>
+            <p>
+                IT Committee works to integrate technology into chapter functions. In addition to maintaining this
+                website
+                and electronic voting and check-in, IT is always working on new ideas. If you have questions, comments,
+                concerns, or ideas, please <a target="_blank" rel="noopener noreferrer"
+                    href="mailto:phisiginfotech@gmail.com">email</a> the current IT Chairs!
+            </p>
+        </div>
+
+        <div class="committee">
+            <h3>Public Relations Committee</h3>
+            <p>
+                From managing our social media accounts to advertising our various events throughout the semester, PR
+                committee's goal is to bridge the gap between PSP and the campus community. PR works closely with
+                Recruitment but is always looking for more ideas on how to represent PSP year-round. Check out PSP on
+                our social media, linked below or on the home page!
+            </p>
+        </div>
+
+        <div class="committee">
+            <h3>Scholarship Committee</h3>
+            <img src="{% static 'root/img/committees/scholarship.PNG' %}">
+            <p class="img">
+                The scholarship Committee is a platform for siblings to share their passions with the Fraternity and
+                upholds
+                our philosophy of "lifelong learning".
+            </p>
+            <p class="img">
+                Scholarship Committee is dedicated to the ideal of scholarship within the classroom; however, academic
+                success is only a small part of embodying this ideal! The Scholarship Committee strives to provide
+                Siblings
+                with opportunities that will help us grow intellectually but also socially and culturally.
+            </p>
+        </div>
+
+        <div class="committee">
+            <h3>Service Committee</h3>
+            <img src="{% static 'root/img/committees/service.jpg' %}">
+            <p class="img">
+                The Service Committee is dedicated to bringing the Fraternity together on projects that
+                support the local community. Our biggest annual event is our involvement in Special Olympics, which
+                takes
+                place in the Spring. This event brings together kids with disabilities while also raising awareness
+                about
+                issues concerning disabilities.
+            </p>
+            <p class="img">
+                The Service Committee will also hold various other activities and events that support local charities as
+                well as the Chapel Hill community as a whole. Service is a great way to form fellowship among the
+                siblings
+                while also making a positive impact.
+            </p>
+        </div>
+
+    </div>
+
+</div>
+{% endblock %}

@@ -123,3 +123,7 @@
 h2 {
     margin-top: 50px;
 }
+
+.card-row:last-child {
+    word-break: break-all;
+}

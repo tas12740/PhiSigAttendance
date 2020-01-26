@@ -14,3 +14,6 @@ def contact(request):
 
 def documents(request):
     return render(request, 'root/documents.html')
+
+def committees(request):
+    return render(request, 'root/committees.html')

@@ -1,0 +1,44 @@
+@media only screen and (max-width: 1000px) {
+    .committee>img {
+        width: 100%;
+    }
+    .committee>h3 {
+        font-size: 4.5em;
+    }
+}
+
+@media only screen and (min-width: 1001px) {
+    .committee>img {
+        width: 35%;
+        float: left;
+    }
+    .committee>p.img {
+        margin-left: 37%;
+    }
+}
+
+#about-committees {
+    border-bottom: 1px solid rgb(23, 98, 118);
+    padding-bottom: 30px;
+}
+
+.main-div p>a {
+    font-family: mont;
+    color: white;
+    text-decoration: underline;
+}
+
+.main-div p>a:hover {
+    font-weight: bold;
+    color: white;
+}
+
+.committee {
+    border-bottom: 1px solid rgb(23, 98, 118);
+    overflow: auto;
+    padding-bottom: 10px;
+}
+
+.committee:last-child {
+    border-bottom: none;
+}

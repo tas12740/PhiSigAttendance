@@ -35,6 +35,7 @@ INSTALLED_APPS = [
     'recruitment.apps.RecruitmentConfig',
     'ipanel.apps.IpanelConfig',
     'root.apps.RootConfig',
+    'siblings.apps.SiblingsConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -148,9 +149,8 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATIC_ROOT = 'static'
 
-# SESSION_COOKIE_SECURE = True
-# CSRF_COOKIE_SECURE = True
-# SECURE_CONTENT_TYPE_NOSNIFF = True
-# SECURE_BROWSER_XSS_FILTER = True
-# SECURE_SSL_REDIRECT = True
-# X_FRAME_OPTIONS = 'DENY'
+# if not DEBUG:
+#     SECURE_SSL_REDIRECT = True
+#     SESSION_COOKIE_SECURE = True
+#     CSRF_COOKIE_SECURE = True
+#     SECURE_REFERRER_POLICY = 'no-referrer'

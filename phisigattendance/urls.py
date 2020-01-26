@@ -25,5 +25,6 @@ urlpatterns = [
     path('ipanel/', include('ipanel.urls', namespace='ipanel')),
     path('bylaws/', views.bylaws, name='bylaws'),
     path('sops/', views.sops, name='sops'),
-    path('', include('root.urls', namespace='root'))
+    path('', include('root.urls', namespace='root')),
+    path('siblings/', include('siblings.urls', namespace='siblings'))
 ]

@@ -1,0 +1,44 @@
+@media only screen and (max-width: 1000px) {
+    .butt {
+        width: 100%;
+        font-size: 3em;
+    }
+}
+
+@media only screen and (min-width: 1001px) {
+    .butt {
+        width: 40%;
+        font-size: 1em;
+    }
+}
+
+.butt {
+    text-decoration: none;
+    font: mont;
+    color: white;
+    display: block;
+    text-align: center;
+    border: 1px solid white;
+    border-radius: 10px;
+    background-color: rgb(23, 98, 118);
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.butt:hover {
+    text-decoration: none;
+    color: rgb(23, 98, 118);
+    background-color: white;
+    border: 1px solid rgb(23, 98, 118);
+}
+
+.main-div p>a {
+    font-family: mont;
+    color: white;
+    text-decoration: underline;
+}
+
+.main-div p>a:hover {
+    font-weight: bold;
+    color: white;
+}

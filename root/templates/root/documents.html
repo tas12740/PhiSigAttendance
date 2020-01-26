@@ -1,0 +1,19 @@
+{% extends 'root/base.html' %}
+
+{% block head %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'root/css/documents.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="main-div">
+    <h1>Important Documents</h1>
+    <div id="docs">
+        <a class="butt" href="{% static 'root/docs/national_constitution.pdf' %}" download>National Constitution</a>
+        <a class="butt" href="{% static 'root/docs/bylaws.pdf' %}" download>Alpha Kappa Bylaws</a>
+        <a class="butt" href="{% static 'root/docs/sops.pdf' %}" download>Alpha Kappa Standard Operating Procedures</a>
+        <a class="butt" href="{% static 'recruitment/forms/Recruitment Packet Spring 2020.pdf' %}" download>Recruitment
+            Packet</a>
+    </div>
+</div>
+{% endblock %}

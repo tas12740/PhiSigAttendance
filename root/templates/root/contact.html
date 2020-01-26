@@ -3,16 +3,37 @@
 {% block head %}
 {% load static %}
 <style>
+    @media only screen and (max-width: 1000px) {
+        .contact-card-content h3 {
+            font-size: 2.75em;
+        }
+
+        .contact-card-content p {
+            font-size: 2.5em;
+        }
+
+        .contact-card-header h1 {
+            font-size: 5em;
+        }
+    }
+
+    @media only screen and (min-width:1001px) {
+        .contact-card-header h1 {
+            font-size: 4em;
+        }
+    }
+
     .contact-card {
         width: 100%;
         border-radius: 10px;
-        border: 10px solid rgb(23, 98, 118);
         margin-bottom: 10px;
     }
 
     .contact-card-header {
         display: table;
         background-color: rgb(23, 98, 118);
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
         width: 100%;
     }
 
@@ -33,14 +54,9 @@
         margin-right: auto;
     }
 
-    .img-section>img:not(.multiple) {
+    .img-section>img {
         width: 150px;
         height: 150px;
-    }
-
-    .img-section>img.multiple {
-        width: 75px;
-        height: 75px;
     }
 
     .header-text {
@@ -49,16 +65,13 @@
         width: 75%;
     }
 
-    .header-text>h1 {
-        font-size: 4em;
-    }
-
     .contact-card-content {
         padding: 20px;
         display: table;
         background-color: white;
         width: 100%;
-        border-radius: 5px;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
     }
 
     .card-row {
@@ -100,7 +113,7 @@
     <p>Recruitment Chairs: <a target="_blank" rel="noopener noreferrer"
             href="mailto:pspakrecruitment@gmail.com">pspakrecruitment@gmail.com</a></p>
 
-    <p class="italics">Another chapter wanting to do inter-chapter events</p>
+    <p class="italics">Another chapter wanting to do inter-chapter events?</p>
 
     <p>ICR Chair (Yelly Gomes): <a target="_blank" rel="noopener noreferrer"
             href="mailto:ygomes27@live.unc.edu">ygomes27@live.unc.edu</a></p>
@@ -624,7 +637,7 @@
         </div>
         <div class="contact-card-content">
             <div class="card-row">
-                <h3>Names</h3>
+                <h3>Name</h3>
                 <p>Maris Thomson</p>
             </div>
             <div class="card-row">
@@ -653,7 +666,7 @@
         </div>
         <div class="contact-card-content">
             <div class="card-row">
-                <h3>Names</h3>
+                <h3>Name</h3>
                 <p>Adam Jordan</p>
             </div>
             <div class="card-row">

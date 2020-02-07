@@ -5,6 +5,7 @@ from . import views
 app_name = 'ipanel'
 
 urlpatterns = [
+    path('', views.index, name='index'),
     path('register/', views.register, name='register'),
     path('vote/', views.votes, name='vote'),
     path('results/', views.results, name='results'),

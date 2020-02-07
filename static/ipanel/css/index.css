@@ -1,0 +1,74 @@
+@media only screen and (max-width: 1000px) {
+    figure {
+        font-size: 3em;
+    }
+    li {
+        font-size: 3em;
+    }
+    #subrosa {
+        font-size: 3em;
+    }
+}
+
+@media only screen and (min-width: 1001px) {
+    #table-div {
+        display: table-row;
+    }
+    #table-div>div {
+        display: table-cell;
+    }
+    #adams-tips {
+        width: 35%;
+        padding-right: 10px;
+    }
+    #info-div {
+        width: 65%;
+        padding-left: 10px;
+    }
+}
+
+figure {
+    font-family: mont;
+    color: white;
+}
+
+figcaption {
+    text-align: right;
+}
+
+li {
+    font-family: mont;
+    color: white;
+}
+
+.butt {
+    text-decoration: none;
+    font: mont;
+    color: white;
+    display: block;
+    text-align: center;
+    border: 1px solid white;
+    border-radius: 10px;
+    background-color: rgb(23, 98, 118);
+    padding: 10px;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.butt:hover {
+    text-decoration: none;
+    color: rgb(23, 98, 118);
+    background-color: white;
+    border: 1px solid rgb(23, 98, 118);
+}
+
+.main-div p>a {
+    font-family: mont;
+    color: white;
+    text-decoration: underline;
+}
+
+.main-div p>a:hover {
+    font-weight: bold;
+    color: white;
+}

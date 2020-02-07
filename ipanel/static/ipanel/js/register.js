@@ -19,14 +19,22 @@ $(document).ready(function () {
             data: data,
             success: (response) => {
                 $('#registerModalTitle').html('Success!');
-                $('#registerModalContent').html('Your passcode is ' + response.code + '. Please copy this code somewhere secret and hold onto it, as it will remain your passcode for the remainder of this I Panel.');
+                $('#registerModalContent').html('Your passcode is ' + response.code + '. Please copy this code somewhere secret and hold onto it, as it will remain your passcode for the remainder of this IPanel.');
                 $('#registerModal').modal();
                 $('#onyen').val('');
                 $('#check').prop('checked', false);
             },
             error: (err) => {
                 $('#registerModalTitle').html('Error!');
-                $('#registerModalContent').html(err.responseText);
+                if (err.status == 500) {
+                    $('#registerModalContent').html('Apparently there is a server error going on currently ... stick with us in these trying times')
+                } else if (err.responseJSON.hasOwnProperty('code')) {
+                    $('#registerModalContent').html('Your passcode is ' + err.responseJSON['code'] + '. Please copy this code somewhere secret and hold onto it, as it will remain your passcode for the remainder of this IPanel.');
+                    $('#onyen').val('');
+                    $('#check').prop('checked', false);
+                } else {
+                    $('#registerModalContent').html(err.responseText);
+                }
                 $('#registerModal').modal();
             }
         })

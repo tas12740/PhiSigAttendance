@@ -1,27 +1,30 @@
-{% extends 'checkin/base.html' %}
+{% extends 'root/base.html' %}
 
 {% block head %}
 {% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'ipanel/css/status.css' %}">
 <script src="{% static 'ipanel/js/status.js' %}"></script>
 {% endblock %}
 
 {% block content %}
-<form id="statusForm" class="my-2">
-    {% csrf_token %}
-    <table class="table table-bordered ">
-        <thead class="thead-dark">
-            <tr>
-                <th scope="col">#</th>
-                <th scope="col">Lock</th>
-                <th scope="col">Open</th>
-            </tr>
-        </thead>
-        <tbody id="tbodyStatus">
+<div class="main-div">
+    <form id="statusForm" class="my-2">
+        {% csrf_token %}
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Locked</th>
+                    <th scope="col">Open</th>
+                </tr>
+            </thead>
+            <tbody id="tbodyStatus">
 
-        </tbody>
-    </table>
-    <button type="submit" class="btn btn-primary">Save</button>
-</form>
+            </tbody>
+        </table>
+        <button id="submit" type="submit" class="btn btn-primary">Save</button>
+    </form>
+</div>
 
 <div class="modal" tabindex="-1" role="dialog" id="statusModal">
     <div class="modal-dialog" role="document">
@@ -34,9 +37,10 @@
             </div>
             <div class="modal-body">
                 <p id="statusModalContent">Body</p>
+                <p id="statusModalErrors"></p>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button id="modalButton" type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
             </div>
         </div>
     </div>

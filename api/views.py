@@ -215,7 +215,10 @@ def register_ipanel(request):
         return HttpResponseBadRequest('You must submit the onyen.')
 
     if IPanelAuth.objects.filter(onyen=onyen).exists():
-        return HttpResponseBadRequest('You have already checked in to this I Panel. Please contact your friendly admin to get your code.')
+        existing_auth = IPanelAuth.objects.filter(onyen=onyen).get()
+        return JsonResponse({
+            'code': existing_auth.passcode
+        }, status=400)
 
     nums = list(range(0, 10))
     nums = [str(x) for x in nums]
@@ -238,12 +241,22 @@ def register_ipanel(request):
     })
 
 
+def ipanel_opens(request):
+    opens = PNMIPanel.objects.filter(status=PNMIPanel.OPEN)
+
+    opens = [pnm.number for pnm in opens]
+
+    return JsonResponse({
+        'pnms': opens
+    })
+
+
 def vote(request):
     data = request.POST
 
     onyen = data.get('onyen')
     if onyen is None:
-        return HttpResponseBadRequest('You must submit the onyen.')
+        return HttpResponseBadRequest('You must submit your onyen.')
 
     code = data.get('code')
     if data is None:
@@ -275,7 +288,7 @@ def vote(request):
             error_pnms.append(key)
             error_statuses.append(f'PNM {key} has not been set up')
             continue
-        
+
         if pnm_status.status == PNMIPanel.LOCKED:
             error_pnms.append(key)
             error_statuses.append(f'PNM {key} is locked')
@@ -285,13 +298,14 @@ def vote(request):
 
         try:
             new_vote.save()
+            success_pnms.append(key)
         except:
             return HttpResponseBadRequest(f'Vote failed for PNM {key}. Try again or contact an admin.')
 
     return JsonResponse({
-        'success_pnms' : success_pnms,
-        'error_pnms' : error_pnms,
-        'error_statuses' : error_statuses
+        'success_pnms': success_pnms,
+        'error_pnms': error_pnms,
+        'error_statuses': error_statuses
     })
 
 
@@ -325,7 +339,7 @@ def ipanel_results(request):
         result = percent >= cutoff
 
         percent = percent * 100
-        results[pnm] = f'Yes ({percent}%)' if result else f'No ({percent}%)'
+        results[pnm] = ['Yes', percent] if result else ['No', percent]
 
     return JsonResponse(results)
 
@@ -370,6 +384,17 @@ def pnm_status(request):
     for pnm in pnms:
         result[pnm.number] = pnm.status
     return JsonResponse(result)
+
+
+def delete_status(request):
+    if request.method != 'POST':
+        return HttpResponseNotAllowed(permitted_methods=['POST'])
+
+    try:
+        PNMIPanel.objects.all().delete()
+        return HttpResponse(status=200)
+    except Exception as e:
+        return HttpResponseBadRequest(e)
 
 
 def generate_status(request):

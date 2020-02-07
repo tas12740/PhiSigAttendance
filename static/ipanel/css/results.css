@@ -1,0 +1,46 @@
+@media only screen and (max-width: 1000px) {
+    #cutoff, #cutoff::placeholder {
+        font-size: 1.5em;
+    }
+    #gen-btn {
+        font-size: 2em;
+        width: 100%;
+    }
+    .pnm>p:first-child {
+        padding-right: 50px;
+    }
+    .pnm>p:not(:first-child) {
+        padding-left: 100px;
+    }
+}
+
+@media only screen and (min-width: 1001px) {
+    #cutoff {
+        max-width: 25%;
+    }
+    .pnm>p:first-child {
+        padding-right: 25px;
+    }
+    .pnm>p:not(:first-child) {
+        padding-left: 50px;
+    }
+    .pnm>p {
+        font-size: 2em;
+    }
+}
+
+.pnm {
+    display: table-row;
+}
+
+.pnm>p {
+    display: table-cell;
+}
+
+.pnm>p:first-child {
+    border-right: 1px dashed rgb(23, 98, 118);
+}
+
+.main-div {
+    padding-bottom: 25px;
+}

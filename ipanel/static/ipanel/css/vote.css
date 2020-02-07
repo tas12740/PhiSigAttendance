@@ -1,0 +1,44 @@
+@media only screen and (max-width: 1000px) {
+    h5 {
+        font-size: 3em;
+    }
+    .form-check {
+        height: 75px;
+    }
+    .form-check>label {
+        padding-left: 25px;
+    }
+    input[type=radio] {
+        height: 25px;
+        width: 25px;
+        top: 25px;
+    }
+    #onyen, #onyen::placeholder, #code, #code::placeholder {
+        font-size: 1.5em;
+    }
+    label {
+        font-size: 3em;
+    }
+    #votebtn {
+        font-size: 2em;
+        width: 100%;
+    }
+    #modalButton {
+        font-size: 2em;
+    }
+}
+
+div.modal p {
+    font-family: mont;
+    color: black
+}
+
+div.modal h5 {
+    font-family: bebas;
+    color: black;
+}
+
+label {
+    font-family: mont;
+    color: white;
+}

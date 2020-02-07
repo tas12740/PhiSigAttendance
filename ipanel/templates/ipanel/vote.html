@@ -1,38 +1,30 @@
-{% extends 'checkin/base.html' %}
+{% extends 'root/base.html' %}
 
 {% block head %}
 {% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'ipanel/css/vote.css' %}">
 <script src="{% static 'ipanel/js/vote.js' %}"></script>
 {% endblock %}
 
 {% block content %}
-<div id="voteGen" class="my-2">
-    <form method="POST" id="voteGenForm">
-        {% csrf_token %}
-        <div class="form-group">
-            <label for="start">Start</label>
-            <input type="number" class="form-control" id="start">
-        </div>
-        <div class="form-group">
-            <label for="end">End</label>
-            <input type="number" class="form-control" id="end">
-        </div>
-        <button type="submit" class="btn btn-primary">Get Form</button>
-    </form>
-</div>
-<div id="votes" class="my-2">
-    <form method="POST" id="voteForm">
-        {% csrf_token %}
-        <div class="form-group">
-            <label class="sr-only">Onyen:</label>
-            <input type="text" required class="form-control" name="onyen" placeholder="Onyen" id="onyen" autocorrect="off" autocapitalize="none">
-        </div>
-        <div class="form-group">
-            <label class="sr-only">Passcode:</label>
-            <input type="text" required class="form-control" name="passcode" placeholder="Your Code" id="code" autocorrect="off" autocapitalize="none">
-        </div>
-        <button type="submit" class="btn btn-primary mt-2" id="votebtn">Vote</button>
-    </form>
+<div class="main-div my-2">
+    <h1>IPanel Voting</h1>
+    <div id="votes">
+        <form method="POST" id="voteForm">
+            {% csrf_token %}
+            <div id="onyen-div" class="form-group">
+                <label class="sr-only">Onyen:</label>
+                <input type="text" required class="form-control" name="onyen" placeholder="Onyen" id="onyen"
+                    autocorrect="off" autocapitalize="none">
+            </div>
+            <div id="passcode-div" class="form-group">
+                <label class="sr-only">Passcode:</label>
+                <input type="text" required class="form-control" name="passcode" placeholder="Your Code" id="code"
+                    autocorrect="off" autocapitalize="none">
+            </div>
+            <button type="submit" class="btn btn-primary mt-2" id="votebtn">Vote</button>
+        </form>
+    </div>
 </div>
 
 <div class="modal" tabindex="-1" role="dialog" id="voteModal">
@@ -46,9 +38,10 @@
             </div>
             <div class="modal-body">
                 <p id="voteModalContent">Body</p>
+                <p id="voteErrorContent"></p>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button id="modalButton" type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
             </div>
         </div>
     </div>

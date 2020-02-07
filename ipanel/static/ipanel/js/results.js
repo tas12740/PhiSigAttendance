@@ -12,9 +12,20 @@ $(document).ready(function () {
             data: data,
             success: (response) => {
                 $('#results').empty();
-                $('#results').append('<ul id="resultsList"></ul>');
+
                 for (let i in response) {
-                    $('#resultsList').append('<li>PNM ' + i + ': ' + response[i] + '</li>');
+                    const currDiv = $('<div class="pnm"></div>');
+
+                    const pnm = $('<p>PNM ' + i + '</p>');
+                    currDiv.append(pnm);
+
+                    const result = $('<p>' + response[i][0] + '</p>');
+                    currDiv.append(result);
+
+                    const percent = $('<p>' + response[i][1] + '%</p>');
+                    currDiv.append(percent);
+                    
+                    $('#results').append(currDiv);
                 }
             }, error: (err) => {
                 $('#resultsModalTitle').html('Error!');

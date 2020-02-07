@@ -1,0 +1,44 @@
+@media only screen and (max-width: 1000px) {
+    h5 {
+        font-size: 3em;
+    }
+    #modalButton {
+        font-size: 2em;
+    }
+    #delete-old, #gen-btn {
+        font-size: 2em;
+        width: 100%;
+    }
+    #number, #number::placeholder {
+        font-size: 1.5em;
+    }
+}
+
+div.modal p {
+    font-family: mont;
+    color: black
+}
+
+div.modal h5 {
+    font-family: bebas;
+    color: black;
+}
+
+.main-div {
+    padding-top: 15px;
+}
+
+#delete-old {
+    margin-bottom: 50px;
+}
+
+.main-div p>a {
+    font-family: mont;
+    color: white;
+    text-decoration: underline;
+}
+
+.main-div p>a:hover {
+    font-weight: bold;
+    color: white;
+}

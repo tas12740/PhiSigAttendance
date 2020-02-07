@@ -1,22 +1,27 @@
-{% extends 'checkin/base.html' %}
+{% extends 'root/base.html' %}
 
 {% block head %}
 {% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'ipanel/css/results.css' %}">
 <script src="{% static 'ipanel/js/results.js' %}"></script>
 {% endblock %}
 
 {% block content %}
-<form method="POST" id="cutOffsForm" class="my-2">
-    {% csrf_token %}
-    <div class="input-group">
-        <input type="number" class="form-control" id="cutoff" value="75" aria-label="Cutoff" aria-describedby="percent">
-        <div class="input-group-append">
-            <span class="input-group-text" id="percent">%</span>
+<div class="main-div">
+    <h1>Results</h1>
+    <form method="POST" id="cutOffsForm" class="my-2">
+        {% csrf_token %}
+        <div class="input-group">
+            <input type="number" class="form-control" id="cutoff" value="75" aria-label="Cutoff"
+                aria-describedby="percent">
+            <div class="input-group-append">
+                <span class="input-group-text" id="percent">%</span>
+            </div>
         </div>
+        <button id="gen-btn" type="submit" class="btn btn-primary my-2">Generate Results</button>
+    </form>
+    <div class="container" id="results">
     </div>
-    <button type="submit" class="btn btn-primary my-2">Generate Results</button>
-</form>
-<div class="container" id="results">
 
 </div>
 

@@ -9,5 +9,5 @@ urlpatterns = [
     path('vote/', views.votes, name='vote'),
     path('results/', views.results, name='results'),
     path('status/', views.status, name='status'),
-    path('generateStatus', views.generate_status, name='generateStatus')
+    path('generate/', views.generate_status, name='generateStatus')
 ]

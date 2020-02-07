@@ -14,9 +14,7 @@ def votes(request):
 def status(request):
     if request.user.is_authenticated:
         username = request.user.username
-        if request.user.is_authenticated:
-            username = request.user.username
-            if username != 'mediators' and username != 'admin':
+        if username != 'mediators' and username != 'admin':
                 return redirect('/ipanel/vote/')
         return render(request, 'ipanel/status.html')
     return redirect('/ipanel/vote/')
@@ -30,10 +28,11 @@ def results(request):
         return render(request, 'ipanel/results.html')
     return redirect('/ipanel/vote/')
 
+
 def generate_status(request):
     if request.user.is_authenticated:
         username = request.user.username
         if username != 'mediators' and username != 'admin':
             return redirect('/ipanel/vote/')
-        return render(request, 'ipanel/generateStatus.html')
+        return render(request, 'ipanel/generate.html')
     return redirect('/ipanel/vote/')

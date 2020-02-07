@@ -1,23 +1,29 @@
-{% extends 'checkin/base.html' %}
+{% extends 'root/base.html' %}
 
 {% block head %}
 {% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'ipanel/css/register.css' %}">
 <script src="{% static 'ipanel/js/register.js' %}"></script>
 {% endblock %}
 
 {% block content %}
-<form class="my-2" method="POST" id="registerForm">
-    {% csrf_token %}
-    <div class="form-group">
-        <label class="sr-only">Onyen:</label>
-        <input type="text" required class="form-control" placeholder="Onyen" id="onyen" autocorrect="off" autocapitalize="none">
-    </div>
-    <div class="form-check">
-        <input class="form-check-input" type="checkbox" value="" id="check">
-        <label class="form-check-label" for="check">I Have Signed and Understand the Subrosa Form</label>
-    </div>
-    <button type="submit" class="btn btn-primary mt-2">Register</button>
-</form>
+<div class="main-div">
+    <h1>IPanel Registration</h1>
+    <form class="my-2" method="POST" id="registerForm">
+        {% csrf_token %}
+        <div class="form-group">
+            <label class="sr-only">Onyen:</label>
+            <input type="text" required class="form-control" placeholder="Onyen" id="onyen" autocorrect="off"
+                autocapitalize="none">
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="check">
+            <label class="form-check-label" id="checkLabel" for="check">I Have Signed and Understand the Subrosa
+                Form</label>
+        </div>
+        <button id="registerButton" type="submit" class="btn btn-primary mt-2">Register</button>
+    </form>
+</div>
 
 <div class="modal" tabindex="-1" role="dialog" id="registerModal">
     <div class="modal-dialog" role="document">
@@ -32,7 +38,7 @@
                 <p id="registerModalContent">Body</p>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button id="modalButton" type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
             </div>
         </div>
     </div>

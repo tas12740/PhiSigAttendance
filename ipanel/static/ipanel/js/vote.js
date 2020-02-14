@@ -33,12 +33,12 @@ $(document).ready(function () {
     $.ajax('/api/ipanelOpens/', {
         type: 'GET',
         success: (response) => {
-            const pnms = response.pnms;
+            const pnms = response.pnms.map((x) => parseInt(x, 10));
             pnms.sort();
 
             if (pnms.length == 0) {
                 $('#voteForm').remove();
-                const message = $('<p>There are no PNMs which are unlocked to vote on right now. Please stay tuned!');
+                const message = $('<p>There are no PNMs which are unlocked to vote on right now. Please stay tuned!</p>');
                 $('#votes').append(message);
             } else {
                 $('.pnm').remove();
@@ -54,7 +54,7 @@ $(document).ready(function () {
         },
         error: () => {
             $('#voteForm').remove();
-            const errMessage = $('<p>There was a problem fetching PNMs which can currently be voted upon. Please stay tuned!');
+            const errMessage = $('<p>There was a problem fetching PNMs which can currently be voted upon. Please stay tuned!</p>');
 
             $('#votes').append(errMessage);
         }

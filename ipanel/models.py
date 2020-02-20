@@ -31,6 +31,9 @@ class Vote(models.Model):
     def __str__(self):
         return f'{self.pnm_number} : {self.vote}'
 
+    class Meta:
+        unique_together = ('vote_onyen', 'pnm_number')
+
 
 class PNMIPanel(models.Model):
     LOCKED = 'L'

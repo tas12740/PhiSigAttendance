@@ -4,4 +4,4 @@ from django.shortcuts import render
 
 
 def documents(request):
-    return render(request, 'siblings/documents.html')
+    return render(request, 'siblings/links.html')

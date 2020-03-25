@@ -9,6 +9,12 @@ import datetime
 from string import ascii_lowercase
 from random import choice
 
+from django.templatetags.static import static
+from requests import get
+from json import load as json_load
+
+from django.conf import settings
+
 
 def find_event(request):
     if request.method != 'POST' and request.method != 'GET':
@@ -433,3 +439,40 @@ def generate_status(request):
     return JsonResponse({
         'failed': failed
     })
+
+
+def cons(request):
+    if request.method != 'POST':
+        return HttpResponseNotAllowed(permitted_methods=['POST'])
+
+    url = static('root/data/cons.json')
+
+    onyen = request.POST.get('onyen')
+    if onyen is None:
+        return HttpResponseBadRequest("You must submit your onyen")
+
+    host = 'http' if settings.DEBUG else 'https'
+    response = get(f'{host}://{request.get_host()}{url}')
+
+    json = response.json()
+
+    restricted = json['restricted'][onyen] if onyen in json['restricted'] else []
+    can_see = [cat for cat in json['cons'] if cat not in restricted]
+
+    map_positions = {
+        'pres': 'President',
+        'vp': 'Vice President',
+        'parlia': 'Parliamentarian',
+        'rec-sec': 'Recording Secretary',
+        'corr-sec': 'Corresponding Secretary',
+        'treasurer': 'Treasurer',
+        'historian': 'Historian',
+        'ias': 'Initiate Advisors',
+        'mediators': 'Mediators'
+    }
+
+    res = dict()
+    for pos in can_see:
+        res[map_positions[pos]] = json['cons'][pos]
+
+    return JsonResponse(res)

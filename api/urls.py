@@ -16,5 +16,6 @@ urlpatterns = [
     path('ipanelStatus/', views.pnm_status, name='ipanelStatus'),
     path('deleteIPanelStatus/', views.delete_status, name='deleteIPanelStatus'),
     path('generateIPanelStatus/', views.generate_status,
-         name='generateIPanelStatus')
+         name='generateIPanelStatus'),
+    path('cons/', views.cons, name='cons')
 ]

@@ -4,13 +4,13 @@
 
 .main-div p>a {
     font-family: mont;
-    color: white;
+    color: rgb(23, 98, 118);
     text-decoration: underline;
 }
 
 .main-div p>a:hover {
     font-weight: bold;
-    color: white;
+    color: rgb(23, 98, 118);
 }
 
 @media only screen and (max-width: 1000px) {

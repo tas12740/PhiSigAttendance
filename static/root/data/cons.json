@@ -1,0 +1,104 @@
+{
+    "cons": {
+        "pres": {
+            "Francisco Cantu": [
+                "bad"
+            ]
+        },
+        "vp": {
+            "Katie Baker": [
+                "whoo"
+            ],
+            "Yelly Gomes": [
+                "whoo"
+            ],
+            "Carter Searcy": [
+                "whoo"
+            ]
+        },
+        "parlia": {
+            "Yelly Gomes": [
+                "whoo"
+            ],
+            "Callie Kirchstein": [
+                "whoo"
+            ]
+        },
+        "rec-sec": {
+            "Catherine Smith": [
+                "whoo"
+            ],
+            "Elizabeth Wilson": [
+                "whoo"
+            ]
+        },
+        "corr-sec": {
+            "Lindsey Deaton": [
+                "whoo"
+            ]
+        },
+        "treasurer": {
+            "Katie Baker": [
+                "whoo"
+            ]
+        },
+        "historian": {
+            "Christine Do / Lauren Hutson": [
+                "whoo"
+            ]
+        },
+        "ias": {
+            "Justis Mitchell / Alex Erling": [
+                "ia"
+            ]
+        },
+        "mediators": {
+            "Jessica Moses-Gerdun": [
+                "med"
+            ]
+        }
+    },
+    "restricted": {
+        "cantu11": [
+            "pres"
+        ],
+        "katieb99": [
+            "vp",
+            "treasurer"
+        ],
+        "ygomes27": [
+            "vp",
+            "parlia"
+        ],
+        "cgsearcy": [
+            "vp"
+        ],
+        "calli3k": [
+            "parlia"
+        ],
+        "cesmith9": [
+            "rec-sec"
+        ],
+        "elizaw": [
+            "rec-sec"
+        ],
+        "lpdeaton": [
+            "corr-sec"
+        ],
+        "cldo": [
+            "historian"
+        ],
+        "laurhut": [
+            "historian"
+        ],
+        "jmitch34": [
+            "ias"
+        ],
+        "aerling": [
+            "ias"
+        ],
+        "jmmg": [
+            "mediators"
+        ]
+    }
+}

@@ -1,0 +1,67 @@
+@media only screen and (max-width: 1000px) {
+    form button {
+        width: 75%;
+        font-size: 3em;
+    }
+    li {
+        font-size: 3em;
+    }
+    label {
+        font-size: 3em;
+    }
+    #onyen {
+        height: 75px;
+        font-size: 3em;
+    }
+    #subrosa-check {
+        transform: scale(2);
+    }
+}
+
+@media only screen and (min-width: 1001px) {
+    form button {
+        width: 40%;
+        font-size: 1em;
+    }
+}
+
+form label {
+    font-family: mont;
+    color: white;
+}
+
+form button {
+    color: white;
+    background-color: rgb(23, 98, 118);
+}
+
+form button {
+    text-decoration: none;
+    font: mont;
+    color: white;
+    display: block;
+    text-align: center;
+    border: 1px solid white;
+    border-radius: 10px;
+    background-color: rgb(23, 98, 118);
+    padding: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+form button:hover {
+    text-decoration: none;
+    color: rgb(23, 98, 118);
+    background-color: white;
+    border: 1px solid rgb(23, 98, 118);
+}
+
+.position {
+    border-top: 1px dashed white;
+    border-bottom: 1px dashed white;
+}
+
+li {
+    font-family: mont;
+    color: white;
+}

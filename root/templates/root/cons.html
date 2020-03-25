@@ -1,0 +1,39 @@
+{% extends 'root/base.html' %}
+
+{% block head %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'root/css/cons.css' %}">
+<script src="{% static 'root/js/cons.js' %}"></script>
+{% endblock %}
+
+{% block content %}
+<div class="main-div">
+    <h1>Con Forum</h1>
+
+    <p>
+        These are cons submitted ahead of time deemed relevant by the Mediators or Maris/Isabel. These cons, like cons
+        submitted during standard elections, are SUBROSA. Violations of Subrosa are punishable under the Bylaws. More
+        importantly, they preserve our ability to have elections where we are free to share our thoughts without
+        compromising our friendships. Please respect Subrosa!
+    </p>
+
+    <form method="POST" id="onyen-form">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="onyen">Onyen</label>
+            <input type="text" class="form-control" id="onyen" placeholder="Enter Onyen" required>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="yes" required id="subrosa-check">
+            <label class="form-check-label" for="subrosa-check">
+                By checking this box, I confirm this page is subject to Subrosa.
+            </label>
+        </div>
+        <button type="submit">Get Cons</button>
+    </form>
+
+    <div id="cons-div">
+
+    </div>
+</div>
+{% endblock %}

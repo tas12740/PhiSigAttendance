@@ -15,6 +15,8 @@ from json import load as json_load
 
 from django.conf import settings
 
+from root.models import ConsSubmission
+
 
 def find_event(request):
     if request.method != 'POST' and request.method != 'GET':
@@ -450,6 +452,12 @@ def cons(request):
     onyen = request.POST.get('onyen')
     if onyen is None:
         return HttpResponseBadRequest("You must submit your onyen")
+
+    new_con_row = ConsSubmission(onyen=onyen)
+    try:
+        new_con_row.save()
+    except:
+        return HttpResponseBadRequest('Unexpected failure!')
 
     host = 'http' if settings.DEBUG else 'https'
     response = get(f'{host}://{request.get_host()}{url}')

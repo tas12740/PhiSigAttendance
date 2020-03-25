@@ -1,5 +1,7 @@
 from django.shortcuts import render
 
+from root.models import ConsSubmission
+
 # Create your views here.
 
 
@@ -25,3 +27,8 @@ def committees(request):
 
 def cons(request):
     return render(request, 'root/cons.html')
+
+
+def cons_view_all(request):
+    onyens = ConsSubmission.objects.all()
+    return render(request, 'root/viewcons.html', context={'onyens': onyens})

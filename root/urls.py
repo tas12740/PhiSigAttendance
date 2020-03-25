@@ -10,5 +10,6 @@ urlpatterns = [
     path('contact/', views.contact, name='contact'),
     path('documents/', views.documents, name='documents'),
     path('committees/', views.committees, name='committees'),
-    path('cons/', views.cons, name='cons')
+    path('cons/', views.cons, name='cons'),
+    path('consSubmissions/', views.cons_view_all, name='consSubmissions')
 ]

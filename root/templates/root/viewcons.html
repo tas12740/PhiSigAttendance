@@ -1,0 +1,28 @@
+{% extends 'root/base.html' %}
+
+{% block head %}
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'root/css/viewcons.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="main-div">
+    <table id="table" class="table">
+        <thead>
+            <tr>
+                <th>Onyen</th>
+                <th>Timestamp</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for val in onyens %}
+            <tr>
+                <td>{{val.onyen}}</td>
+                <td>{{val.created}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

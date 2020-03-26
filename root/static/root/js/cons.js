@@ -2,8 +2,15 @@ $(document).ready(function () {
     $('#onyen-form').on('submit', function (e) {
         e.preventDefault();
 
+        const onyen = $('#onyen').val().toLowerCase();
+        const numbers = /^[0-9]+$/;
+        if (onyen.match(numbers)) {
+            alert("Please submit your onyen, not your PID!");
+            return;
+        }
+
         const data = {
-            'onyen': $('#onyen').val(),
+            'onyen': onyen,
             'csrfmiddlewaretoken': $('input[name="csrfmiddlewaretoken"]').val(),
         }
 

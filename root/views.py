@@ -32,3 +32,7 @@ def cons(request):
 def cons_view_all(request):
     onyens = ConsSubmission.objects.all()
     return render(request, 'root/viewcons.html', context={'onyens': onyens})
+
+
+def box(request):
+    return render(request, 'root/box.html')

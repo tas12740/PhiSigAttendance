@@ -17,5 +17,6 @@ urlpatterns = [
     path('deleteIPanelStatus/', views.delete_status, name='deleteIPanelStatus'),
     path('generateIPanelStatus/', views.generate_status,
          name='generateIPanelStatus'),
-    path('cons/', views.cons, name='cons')
+    path('cons/', views.cons, name='cons'),
+    path('box/', views.box, name='box')
 ]

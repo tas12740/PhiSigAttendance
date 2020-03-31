@@ -1,105 +1,137 @@
 {
     "cons": {
-        "pres": {
-            "Francisco Cantu": [
-                "Risk management concerns related to the Jesters"
-            ]
-        },
-        "vp": {
-            "Katie Baker": [
+        "scholarship": {
+            "Katie Baker / Megan Ragusa": [
                 "N/A"
             ],
-            "Yelly Gomes": [
-                "Allegations of personal bias",
-                "Personal interactions w/ a sib that were unprofessional and insensitive."
-            ],
-            "Carter Searcy": [
+            "Liliana Gregg": [
                 "N/A"
             ]
         },
-        "parlia": {
-            "Yelly Gomes": [
+        "fellowship": {
+            "Abby Carey-Ewend / Megan Ragusa": [
                 "N/A"
             ],
-            "Callie Kirchstein": [
+            "Lindsey Deaton / Catherine Smith": [
                 "N/A"
             ]
         },
-        "rec-sec": {
-            "Catherine Smith": [
+        "service": {
+            "Anne Majerus / Pranesh Gayam": [
+                "N/A"
+            ]
+        },
+        "recruitment": {
+            "Callie Kirchstein / Francisco Cantu": [
+                "N/A"
+            ]
+        },
+        "pr": {
+            "Anne Majerus / Janis Arrojado": [
+                "N/A"
+            ]
+        },
+        "fundraising": {
+            "Yelly Gomes / Liliana Gregg": [
+                "N/A"
+            ]
+        },
+        "alumni": {
+            "Joe Vick / Gaaron Goldsmith": [
+                "N/A"
+            ]
+        },
+        "it": {
+            "Salma Samih / Tori Hoffmann": [
+                "N/A"
+            ]
+        },
+        "im/rec": {
+            "Pranesh Gayam": [
                 "N/A"
             ],
-            "Elizabeth Wilson": [
-                "Personal interactions w/ a sib that were unprofessional and insensitive."
-            ]
-        },
-        "corr-sec": {
-            "Lindsey Deaton": [
+            "Joe Vick / Gaaron Goldsmith": [
                 "N/A"
             ]
         },
-        "treasurer": {
-            "Katie Baker": [
+        "ip": {
+            "Janis Arrojado": [
                 "N/A"
             ]
         },
-        "historian": {
-            "Christine Do / Lauren Hutson": [
+        "icr": {
+            "Lindsey Deaton / Yelly Gomes": [
                 "N/A"
             ]
         },
-        "ias": {
-            "Justis Mitchell / Alex Erling": [
+        "standards": {
+            "Tori Hoffmann / Sarah Smith": [
                 "N/A"
-            ]
-        },
-        "mediators": {
-            "Jessica Moses-Gerdun": [
+            ],
+            "Joe Vick": [
                 "N/A"
             ]
         }
     },
     "restricted": {
-        "cantu11": [
-            "pres"
-        ],
         "katieb99": [
-            "vp",
-            "treasurer"
+            "scholarship"
         ],
-        "ygomes27": [
-            "vp",
-            "parlia"
+        "megan13": [
+            "scholarship",
+            "fellowship"
         ],
-        "cgsearcy": [
-            "vp"
+        "lilianam": [
+            "scholarship",
+            "fundraising"
         ],
-        "calli3k": [
-            "parlia"
-        ],
-        "cesmith9": [
-            "rec-sec"
-        ],
-        "elizaw": [
-            "rec-sec"
+        "abbyce": [
+            "fellowship"
         ],
         "lpdeaton": [
-            "corr-sec"
+            "fellowship",
+            "icr"
         ],
-        "cldo": [
-            "historian"
+        "cesmith9": [
+            "fellowship"
         ],
-        "laurhut": [
-            "historian"
+        "amajerus": [
+            "service",
+            "pr"
         ],
-        "jmitch34": [
-            "ias"
+        "praneshg": [
+            "service",
+            "im/rec"
         ],
-        "aerling": [
-            "ias"
+        "calli3k": [
+            "recruitment"
         ],
-        "jmmg": [
-            "mediators"
+        "cantu11": [
+            "recruitment"
+        ],
+        "janisrae": [
+            "pr",
+            "ip"
+        ],
+        "ygomes27": [
+            "fundraising",
+            "icr"
+        ],
+        "josephwv": [
+            "alumni",
+            "im/rec",
+            "standards"
+        ],
+        "ggold3": [
+            "alumni",
+            "im/rec"
+        ],
+        "salma": [
+            "it"
+        ],
+        "torih": [
+            "it",
+            "standards"
         ]
     }
 }

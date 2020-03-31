@@ -11,5 +11,6 @@ urlpatterns = [
     path('documents/', views.documents, name='documents'),
     path('committees/', views.committees, name='committees'),
     path('cons/', views.cons, name='cons'),
-    path('consSubmissions/', views.cons_view_all, name='consSubmissions')
+    path('consSubmissions/', views.cons_view_all, name='consSubmissions'),
+    path('box/', views.box, name='box')
 ]

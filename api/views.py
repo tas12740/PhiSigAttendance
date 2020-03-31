@@ -15,7 +15,7 @@ from json import load as json_load
 
 from django.conf import settings
 
-from root.models import ConsSubmission
+from root.models import ConsSubmission, Box
 
 
 def find_event(request):
@@ -476,7 +476,19 @@ def cons(request):
         'treasurer': 'Treasurer',
         'historian': 'Historian',
         'ias': 'Initiate Advisors',
-        'mediators': 'Mediators'
+        'mediators': 'Mediators',
+        'scholarship': 'Scholarship',
+        'fellowship': 'Fellowship',
+        'service': 'Service',
+        'recruitment': 'Recruitment',
+        'pr': 'Public Relations (PR)',
+        'fundraising': 'Fundraising',
+        'alumni': 'Alumni',
+        'it': 'Information Technology (IT)',
+        'im/rec': 'IM/Recreation',
+        'ip': 'Intentional Programming (IP)',
+        'icr': 'Interchapter Relations (ICR)',
+        'standards': 'Standards'
     }
 
     res = dict()
@@ -484,3 +496,20 @@ def cons(request):
         res[map_positions[pos]] = json['cons'][pos]
 
     return JsonResponse(res)
+
+
+def box(request):
+    if request.method != 'POST':
+        return HttpResponseNotAllowed(permitted_methods=['POST'])
+
+    submission = request.POST.get('submission')
+    if submission is None:
+        return HttpResponseBadRequest("You must submit something, silly!")
+
+    new_box_row = Box(submission=submission)
+    try:
+        new_box_row.save()
+    except:
+        return HttpResponseBadRequest('Unexpected failure!')
+
+    return JsonResponse({'success': True})

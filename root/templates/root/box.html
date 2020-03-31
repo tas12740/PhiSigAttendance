@@ -1,0 +1,42 @@
+{% extends 'root/base.html' %}
+
+{% block head %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'root/css/box.css' %}">
+<script src="{% static 'root/js/box.js' %}"></script>
+{% endblock %}
+
+{% block content %}
+<div class="main-div">
+    <h1>The Virtual Box</h1>
+
+    <form method="POST" id="box-form">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="submission">Submission</label>
+            <textarea class="form-control" id="submission" rows="4"></textarea>
+        </div>
+
+        <button type="submit">Submit</button>
+    </form>
+</div>
+
+<div class="modal" tabindex="-1" role="dialog" id="modal">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalTitle">Title</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p id="modalContent">Body</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

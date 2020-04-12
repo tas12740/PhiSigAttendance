@@ -36,3 +36,7 @@ def cons_view_all(request):
 
 def box(request):
     return render(request, 'root/box.html')
+
+
+def letter(request):
+    return render(request, 'root/letter.html')

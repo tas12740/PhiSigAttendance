@@ -1,0 +1,53 @@
+@media only screen and (max-width: 1000px) {
+    p, blockquote {
+        font-size: 3em;
+    }
+}
+
+@media only screen and (min-width: 1001px) {
+    p, blockquote {
+        font-size: 1.5em;
+    }
+}
+
+.head-p {
+    margin-top: 10px;
+    margin-bottom: 75px;
+}
+
+.main-div p {
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+.main-div a {
+    color: white;
+    font-family: mont;
+    text-decoration: underline;
+}
+
+.main-div a:hover {
+    font-weight: bold;
+    color: white;
+}
+
+blockquote {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    margin-left: 15%;
+    margin-right: 15%;
+    color: white;
+    font-family: mont;
+}
+
+.main-div p.sig {
+    margin-top: 75px;
+}
+
+.right {
+    text-align: right;
+}
+
+.ps {
+    margin-top: 150px;
+}

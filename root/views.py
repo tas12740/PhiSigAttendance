@@ -40,3 +40,7 @@ def box(request):
 
 def letter(request):
     return render(request, 'root/letter.html')
+
+
+def goodbye(request):
+    return render(request, 'root/2020goodbye.html')

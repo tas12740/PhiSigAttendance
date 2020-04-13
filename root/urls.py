@@ -14,5 +14,6 @@ urlpatterns = [
     path('consSubmissions/', views.cons_view_all, name='consSubmissions'),
     path('box/', views.box, name='box'),
     path('letter/', views.letter, name='letter'),
-    path('goodbye/', views.goodbye, name='goodbye')
+    path('goodbye/', views.goodbye, name='goodbye'),
+    path('box/ep1/', views.vboxep1, name='virtual-box-ep-1')
 ]

@@ -1,0 +1,13 @@
+{% extends 'root/base.html' %}
+
+{% block head %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'root/css/vbox.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="main-div">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/pOToJV6l31s" frameborder="0"
+        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+{% endblock %}

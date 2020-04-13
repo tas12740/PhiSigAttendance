@@ -44,3 +44,7 @@ def letter(request):
 
 def goodbye(request):
     return render(request, 'root/2020goodbye.html')
+
+
+def vboxep1(request):
+    return render(request, 'root/vboxep1.html')

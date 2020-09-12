@@ -14,7 +14,7 @@ $(document).ready(function () {
             'onyen': $('#onyen').val()
         }
 
-        $.ajax('/api/ipanelRegister/', {
+        $.ajax('/api/ipanel/registration/', {
             type: 'POST',
             data: data,
             success: (response) => {

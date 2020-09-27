@@ -76,7 +76,7 @@ $(document).ready(function () {
             data['' + num] = $('input[name="vote' + num + '"]:checked').val();
         }
 
-        $.ajax('/api/ipanelVote/', {
+        $.ajax('/api/ipanel/vote/', {
             type: 'POST',
             data: data,
             success: (response) => {

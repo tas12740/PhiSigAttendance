@@ -63,8 +63,8 @@ $(document).ready(function () {
             data[number] = val;
         }
 
-        $.ajax('/api/ipanelStatus/', {
-            type: 'POST',
+        $.ajax('/api/ipanel/status/', {
+            type: 'PUT',
             data: data,
             success: (response) => {
                 $('#statusModalTitle').html('Success!');

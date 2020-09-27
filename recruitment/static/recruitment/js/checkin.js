@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    $.ajax('/api/findEvent/', {
+    $.ajax('/api/event/', {
         type: 'GET',
         data: {
             'recruitment': true
@@ -26,7 +26,7 @@ $(document).ready(function () {
             'event_name': $('#eventName').val()
         }
 
-        $.ajax('/api/recruitmentOnyen/', {
+        $.ajax('/api/recruitment/onyen/', {
             type: 'POST',
             data: data,
             success: (response) => {
@@ -57,7 +57,7 @@ $(document).ready(function () {
 
         console.log(data);
 
-        $.ajax('/api/pnmCheckIn/', {
+        $.ajax('/api/recruitment/checkin/', {
             type: 'POST',
             data: data,
             success: () => {

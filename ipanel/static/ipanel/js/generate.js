@@ -3,8 +3,8 @@ $(document).ready(function () {
         event.preventDefault();
 
         if (confirm('WARNING! THIS WILL DELETE VOTES AND CANNOT BE UNDONE. PLEASE MAKE SURE THAT YOU ARE VERY CAREFUL BEFORE CONFIRMING THIS.')) {
-            $.ajax('/api/deleteIPanelStatus/', {
-                type: 'POST',
+            $.ajax('/api/ipanel/status/', {
+                type: 'DELETE',
                 data: {
                     'csrfmiddlewaretoken': $('input[name="csrfmiddlewaretoken"]').val()
                 },

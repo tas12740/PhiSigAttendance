@@ -7,7 +7,7 @@ $(document).ready(function () {
             'csrfmiddlewaretoken': $('input[name="csrfmiddlewaretoken"]').val()
         }
 
-        $.ajax('/api/ipanelResults/', {
+        $.ajax('/api/ipanel/results/', {
             type: 'POST',
             data: data,
             success: (response) => {

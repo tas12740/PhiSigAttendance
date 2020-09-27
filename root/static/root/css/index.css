@@ -9,13 +9,16 @@
         height: 120px;
         line-height: 120px;
     }
+    
 }
 
 @media only screen and (min-width: 1001px) {
     #welcome-text {
         font-size: 1.25em;
     }
+    
 }
+
 
 .carousel-img {
     width: 100vh;
@@ -30,6 +33,17 @@
 
 #welcome-text {
     margin-top: 20px;
+}
+
+#welcome-div h1 a {
+    font-family: mont;
+    color: white;
+    text-decoration: underline;
+}
+
+#welcome-div h1 a:hover {
+    font-weight: bold;
+    color: white;
 }
 
 #social-div>.fa:hover, #social-div>.fab:hover {

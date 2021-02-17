@@ -39,14 +39,12 @@
 #welcome-div h1 a {
     font-family: mont;
     color: white;
-    text-decoration: underline;
+    text-decoration: none;
 }
 
 #welcome-div h1 a:hover {
-    font-weight: bold;
     color: white;
 }
-
 
 
 #social-div>.fa:hover, #social-div>.fab:hover {
